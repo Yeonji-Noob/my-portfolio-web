@@ -6,10 +6,12 @@ import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
 // resetCSS랑 같은 역할
 const GlobalStyle = createGlobalStyle`
   
-  
-  *, *::before, *::after {
+  * {
+    width: 100%;
+    height: 100%;
     box-sizing: border-box;
   }
+
 
   body {
     font-family: "Helvetica", "Arial", sans-serif;
@@ -18,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     list-style: none;
     text-decoration: none;
+    overflow:hidden;
   }
 
   @font-face {
