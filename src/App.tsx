@@ -1,7 +1,7 @@
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 import GlobalStyle from "./styles/global_style"
-import BackGround from "./component/bg";
+import BackGround from "./containers/bg";
 import Bar from "./component/common/appbar";
 import WinIcon from "./component/common/win_icon";
 

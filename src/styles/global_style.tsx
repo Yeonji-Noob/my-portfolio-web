@@ -1,14 +1,12 @@
 import { createGlobalStyle } from "styled-components";
 import ms_sans_serif from "react95/dist/fonts/ms_sans_serif.woff2";
-import ms_sans_serif_bold from 'react95/dist/fonts/ms_sans_serif_bold.woff2';
-
+import ms_sans_serif_bold from "react95/dist/fonts/ms_sans_serif_bold.woff2";
+import DungGeunMo from "../font/DungGeunMo.woff2"
 
 // resetCSS랑 같은 역할
 const GlobalStyle = createGlobalStyle`
   
   * {
-    width: 100%;
-    height: 100%;
     box-sizing: border-box;
   }
 
@@ -21,6 +19,12 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     overflow:hidden;
+  }
+
+
+  @font-face {
+    font-family: 'DungGeunMo';
+    src: url('${DungGeunMo}') format('woff2');
   }
 
   @font-face {
@@ -36,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal
   }
   body {
-    font-family: 'ms_sans_serif';
+    font-family: 'DungGeunMo';
   }
 `;
 
