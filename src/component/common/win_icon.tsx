@@ -5,6 +5,10 @@ import icon3 from "../../imgs/icons/coffee.png";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
 
+import { GuestBook } from "../guest_book/guest_window";
+
+
+import {useState} from "react";
 
 // 나 : 우왕 중복되는 태그는 하나만 만들어도 되네 ~~~! 짱짱이당
 // TS : 응 Props 넘겨줄때 타입지정해라 ㅅㄱ
@@ -73,7 +77,14 @@ cursor: 'pointer';
 //////////////////////////////////////////////
 
 
-const WinIcon = () => {
+const WinIcon: React.FC = () => {
+
+const [showDiv, setShowDiv] = useState<boolean>(false)
+
+const IconClick = () => {
+    setShowDiv(true);
+}
+
 
 
     return (
@@ -110,7 +121,9 @@ const WinIcon = () => {
                 </Icon1Label>
             </DivIconContainer>
 
-            <DivIconContainer top="14px" left="86px">
+
+            <GuestBook showDiv={showDiv} setShowDiv={setShowDiv} />
+            <DivIconContainer onClick={IconClick} top="14px" left="86px">
                 <Icon src={icon5} top="8px" left="14px">
                 </Icon>
                 <Icon1Label top="26px" left="6px">
