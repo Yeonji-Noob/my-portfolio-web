@@ -34,11 +34,6 @@ const Bar = () => {
 
           <Handle size={38} style={{ position: 'absolute', left: '90px' }} />
 
-          <MenuListItem style={{ position: 'absolute', left: '95px' }} >
-            <span role='img' aria-label='👨‍💻' >
-              👨‍💻
-            </span>
-          </MenuListItem>
 
           {isOpen && (
             <MenuList
@@ -80,6 +75,10 @@ const Bar = () => {
               </MenuListItem>
             </MenuList>
           )}
+
+          <Button variant="thin" style={{ display: 'flax', zIndex: '101', marginLeft: '100px' }}>
+            👨‍💻
+          </Button>
 
           <FrameContainer>
             <Frame variant="well" style={{ position: 'absolute', height: '35px', width: '78px', right: '2px' }}>

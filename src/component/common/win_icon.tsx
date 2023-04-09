@@ -4,11 +4,10 @@ import icon2 from "../../imgs/icons/notepad.png";
 import icon3 from "../../imgs/icons/coffee.png";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
-
 import { GuestBook } from "../guest_book/guest_window";
 
 
-import {useState} from "react";
+import { useState } from "react";
 
 // 나 : 우왕 중복되는 태그는 하나만 만들어도 되네 ~~~! 짱짱이당
 // TS : 응 Props 넘겨줄때 타입지정해라 ㅅㄱ
@@ -79,11 +78,29 @@ cursor: 'pointer';
 
 const WinIcon: React.FC = () => {
 
-const [showDiv, setShowDiv] = useState<boolean>(false)
+    const [showDiv, setShowDiv] = useState<boolean>(false)
 
-const IconClick = () => {
-    setShowDiv(true);
-}
+    const IconClick = () => {
+        setShowDiv(true);
+    }
+
+    // const [position, setPosition] = useState({ x: 0, y: 0 }); //window의 포지션 값
+
+
+    // type DataProps = {
+    //     node: HTMLElement,
+    //     x: number, y: number,
+    //     deltaX: number, deltaY: number,
+    //     lastX: number, lastY: number
+    // }
+
+    // const trackPos = (data: DataProps) => {
+    //     setPosition({ x: data.x, y: data.y });
+    //     console.log('drag');
+    // }
+
+    // const nodeRef = useRef(null);
+
 
 
 
@@ -121,8 +138,8 @@ const IconClick = () => {
                 </Icon1Label>
             </DivIconContainer>
 
+                <GuestBook showDiv={showDiv} setShowDiv={setShowDiv} />
 
-            <GuestBook showDiv={showDiv} setShowDiv={setShowDiv} />
             <DivIconContainer onClick={IconClick} top="14px" left="86px">
                 <Icon src={icon5} top="8px" left="14px">
                 </Icon>
