@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
 
-import MonitiorImg from "../../imgs/bg/welcome-monitor_background.jpg"
+import MonitorImg from "../../imgs/bg/welcome-monitor_background.jpg"
 
 const CloseIcon = styled.span`
 
@@ -36,6 +36,17 @@ display: inline-block;
     }
 `;
 
+const ButtonDivFlex = styled.div`
+
+display: flex;
+flex-direction: column;
+
+@media (max-width: 300px) {
+    display: none;
+}
+
+`;
+
 
 const WelcomeTitle = styled.span`
 display: block;
@@ -43,8 +54,6 @@ font-size: 20px;
 
 
 `;
-
-
 
 
 interface ShowDivProps {
@@ -86,7 +95,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
                 <WindowContent style={{ display: 'flex', flexDirection: 'column' }}>
 
                     <WelcomeTitle>
-                        Welcome to Portfolio95
+                        Welcome to DEMI95
                     </WelcomeTitle>
                     <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <Frame variant="field" style={{
@@ -97,17 +106,20 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
                             backgroundColor: 'lightyellow'
                         }}>
                             <div style={{marginTop:'125px' ,marginLeft:'25px'}}>
-                                <Monitor backgroundStyles={{ background:'blue' }} />
+                                {/* 4/13 background img url불러올때 아래처럼 써야 함 안그러면 잘 안먹음 별짓 다해봄 */}
+                                {/* https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles */}
+                                {/* 스택오버플로우 최고 */}
+                                <Monitor backgroundStyles={{ backgroundImage: `url(${MonitorImg})` }} />
                             </div>
 
                         </Frame>
-                        <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <ButtonDivFlex>
                             <Button style={{ width: '150px', marginTop: '16px', marginLeft: '18px' }}>Default</Button>
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
                             <Separator style={{ width: '150px', marginTop: '40px', marginLeft: '18px' }} />
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Close</Button>
-                        </div>
+                        </ButtonDivFlex>
 
                     </div>
 

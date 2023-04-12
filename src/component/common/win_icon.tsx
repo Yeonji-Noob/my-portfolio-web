@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import icon1 from "../../imgs/icons/chrome.png";
-import icon2 from "../../imgs/icons/notepad.png";
+// import icon2 from "../../imgs/icons/notepad.png";
 import icon3 from "../../imgs/icons/coffee.png";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
 import { GuestBook } from "../guest_book/guest_window";
+import { Notepad } from "../notepad/notepad_icon";
 
+// import { VideoBg2 } from "../../containers/bg"
 
 import { useState } from "react";
 
@@ -70,7 +72,7 @@ cursor: 'pointer';
         color: white;
     }
 
-`
+`;
 
 //////////////////////////////////////////////
 //////////////////////////////////////////////
@@ -95,13 +97,7 @@ const WinIcon: React.FC = () => {
                 </Icon1Label>
             </DivIconContainer>
 
-            <DivIconContainer top="90px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/cursors/cur-11/cur1046.cur), auto` }}>
-                <Icon src={icon2} top="15px" left="10px">
-                </Icon>
-                <Icon1Label top="35px" left="2px">
-                    notepad
-                </Icon1Label>
-            </DivIconContainer>
+            <Notepad></Notepad>
 
             <DivIconContainer top="175px" left="10px">
                 <Icon src={icon3} top="15px" left="13px">
@@ -111,6 +107,7 @@ const WinIcon: React.FC = () => {
                 </Icon1Label>
             </DivIconContainer>
 
+            
             <DivIconContainer top="260px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}>
                 <Icon src={icon4} top="15px" left="13px">
                 </Icon>
@@ -129,6 +126,9 @@ const WinIcon: React.FC = () => {
                     book
                 </Icon1Label>
             </DivIconContainer>
+
+
+
 
         </>
 

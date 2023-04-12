@@ -61,7 +61,7 @@ const Bar = () => {
                 <span role='img' aria-label='👨‍💻' >
                   👨‍💻
                 </span>
-                heeeeey
+                welcome!
               </MenuListItem>
 
               <MenuListItem >
