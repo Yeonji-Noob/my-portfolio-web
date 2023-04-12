@@ -17,7 +17,7 @@ function App() {
     <>
       <GlobalStyle />
       <ThemeProvider theme={Marine}>
-        {/* <Windows /> */}
+
         <WinIcon />
         <BackGround />
         <Bar />

@@ -84,25 +84,6 @@ const WinIcon: React.FC = () => {
         setShowDiv(true);
     }
 
-    // const [position, setPosition] = useState({ x: 0, y: 0 }); //window의 포지션 값
-
-
-    // type DataProps = {
-    //     node: HTMLElement,
-    //     x: number, y: number,
-    //     deltaX: number, deltaY: number,
-    //     lastX: number, lastY: number
-    // }
-
-    // const trackPos = (data: DataProps) => {
-    //     setPosition({ x: data.x, y: data.y });
-    //     console.log('drag');
-    // }
-
-    // const nodeRef = useRef(null);
-
-
-
 
     return (
         <>

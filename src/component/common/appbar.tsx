@@ -2,7 +2,7 @@ import { AppBar, Toolbar, Button, Frame, MenuList, MenuListItem, Separator, Hand
 import styled from "styled-components";
 import { CurrentTime } from "./appbar-time";
 import { useState } from "react";
-
+import Welcome from "../welcome/welcome_window";
 
 import BarStartImg from "../../imgs/bar/bar-win_start.png";
 
@@ -20,8 +20,19 @@ const Bar = () => {
 
   const [isOpen, setOpen] = useState(false);
 
+
+  const [showDiv, setShowDiv] = useState<boolean>(false)
+
+  const IconClick = () => {
+      setShowDiv(false);
+  }
+
+
   return (
-    //top: 'none' 하면 안먹고  'auto' 하니까 먹음 ㅋㅋ
+    <>
+    <Welcome showDiv={showDiv} setShowDiv={setShowDiv}/>
+
+    {/* //top: 'none' 하면 안먹고  'auto' 하니까 먹음 ㅋㅋ */}
     <AppBar style={{ position: 'fixed', width: '100%', height: '50px', zIndex: '100', top: 'auto', bottom: '0' }}>
       <Toolbar>
         <div style={{ display: 'flex', position: 'relative', width: '100%', height: '50px' }}>
@@ -46,7 +57,7 @@ const Bar = () => {
               }}
               onClick={() => setOpen(false)}
             >
-              <MenuListItem >
+              <MenuListItem onClick={IconClick}>
                 <span role='img' aria-label='👨‍💻' >
                   👨‍💻
                 </span>
@@ -88,6 +99,8 @@ const Bar = () => {
         </div>
       </Toolbar>
     </AppBar>
+    </>
+
 
 
   );
