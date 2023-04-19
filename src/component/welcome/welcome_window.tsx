@@ -5,6 +5,7 @@ import Draggable from "react-draggable";
 import { useRef } from "react";
 
 import MonitorImg from "../../imgs/bg/welcome-monitor_background.jpg"
+import TipIcon from "../../imgs/icons/tip.png"
 
 const CloseIcon = styled.span`
 
@@ -52,6 +53,15 @@ const WelcomeTitle = styled.span`
 display: block;
 font-size: 20px;
 
+
+`;
+
+
+const WelcomeText = styled.p`
+position: relative;
+left:80px;
+width:160px;
+height: 20px;
 
 `;
 
@@ -105,7 +115,14 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
                             width: '300px',
                             backgroundColor: 'lightyellow'
                         }}>
-                            <div style={{marginTop:'125px' ,marginLeft:'25px'}}>
+                            <img src={TipIcon} alt="Tip" style={{ position: 'absolute' }} />
+                            <WelcomeText style={{fontWeight:600}}>
+                                Did you know...
+                            </WelcomeText>
+                            <WelcomeText>
+                                웹 브라우저 사이즈에 <br/>최적화 되어있습니다.
+                            </WelcomeText>
+                            <div style={{ marginTop: '80px', marginLeft: '25px' }}>
                                 {/* 4/13 background img url불러올때 아래처럼 써야 함 안그러면 잘 안먹음 별짓 다해봄 */}
                                 {/* https://stackoverflow.com/questions/39195687/setting-a-backgroundimage-with-react-inline-styles */}
                                 {/* 스택오버플로우 최고 */}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import icon2 from "../../imgs/icons/notepad.png";
-import { NotepadWindow } from "./notepad_window";
+import icon1 from "../../imgs/icons/chrome.png";
+import { ChromeWindow } from "./chrome_window";
 
 interface DivProps {
     top: string;
@@ -62,7 +62,8 @@ cursor: 'pointer';
 
 `;
 
-export const Notepad = () => {
+export const ChromeIcon = () => {
+
 
 
     const [showDiv, setShowDiv] = useState<boolean>(false)
@@ -74,12 +75,12 @@ export const Notepad = () => {
 
     return (
         <>
-            <NotepadWindow showDiv={showDiv} setShowDiv={setShowDiv} ></NotepadWindow>
-            <DivIconContainer onClick={IconClick} top="90px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/cursors/cur-11/cur1046.cur), auto` }}>
-                <Icon src={icon2} top="15px" left="10px">
+            <ChromeWindow showDiv={showDiv} setShowDiv={setShowDiv} ></ChromeWindow>
+            <DivIconContainer onClick={IconClick} top="5px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-10/nat927.png), auto` }}>
+                <Icon src={icon1} top="15px" left="14px">
                 </Icon>
-                <Icon1Label top="35px" left="2px">
-                    notepad
+                <Icon1Label top="35px" left="6px">
+                    chrome
                 </Icon1Label>
             </DivIconContainer>
         </>

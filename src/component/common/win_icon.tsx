@@ -6,6 +6,7 @@ import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
 import { GuestBook } from "../guest_book/guest_window";
 import { Notepad } from "../notepad/notepad_icon";
+import { ChromeIcon } from "../chrome/chrome_icon";
 
 // import { VideoBg2 } from "../../containers/bg"
 
@@ -89,13 +90,14 @@ const WinIcon: React.FC = () => {
 
     return (
         <>
-            <DivIconContainer top="5px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-10/nat927.png), auto` }}>
+            {/* <DivIconContainer top="5px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-10/nat927.png), auto` }}>
                 <Icon src={icon1} top="15px" left="14px">
                 </Icon>
                 <Icon1Label top="35px" left="6px">
                     chrome
                 </Icon1Label>
-            </DivIconContainer>
+            </DivIconContainer> */}
+            <ChromeIcon></ChromeIcon>
 
             <Notepad></Notepad>
 
