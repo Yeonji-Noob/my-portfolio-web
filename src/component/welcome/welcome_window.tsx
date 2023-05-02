@@ -93,7 +93,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
         <Draggable nodeRef={nodeRef} >
 
 
-            <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px', zIndex: '99', width: '500px', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
+            <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '10%', zIndex: '99', width: '500px', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
                 <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
                     <span style={{ textShadow: '0px 1px 2px #000000' }}>Welcome</span>
                     <Button onClick={CloseButtonClick}>
@@ -116,11 +116,11 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
                             backgroundColor: 'lightyellow'
                         }}>
                             <img src={TipIcon} alt="Tip" style={{ position: 'absolute' }} />
-                            <WelcomeText style={{fontWeight:600}}>
+                            <WelcomeText>
                                 Did you know...
                             </WelcomeText>
-                            <WelcomeText>
-                                웹 브라우저 사이즈에 <br/>최적화 되어있습니다.
+                            <WelcomeText style={{ fontSize: '13px' }}>
+                                웹 브라우저 사이즈에 <br />최적화 되어있습니다.
                             </WelcomeText>
                             <div style={{ marginTop: '80px', marginLeft: '25px' }}>
                                 {/* 4/13 background img url불러올때 아래처럼 써야 함 안그러면 잘 안먹음 별짓 다해봄 */}
@@ -135,7 +135,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
                             <Separator style={{ width: '150px', marginTop: '40px', marginLeft: '18px' }} />
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Close</Button>
+                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }} onClick={CloseButtonClick} >Close</Button>
                         </ButtonDivFlex>
 
                     </div>

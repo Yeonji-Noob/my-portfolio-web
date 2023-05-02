@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
-import { Window, WindowHeader, WindowContent, Button } from "react95";
+import { Dispatch, SetStateAction, useState, useRef } from "react";
+import { Window, WindowHeader, WindowContent, Button, Tabs, Tab, TabBody } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { useRef } from "react";
+import { SkillTab, AboutTab, ProjectTab } from "./index";
 
 const CloseIcon = styled.span`
 
@@ -50,29 +50,72 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
   }
 
-// draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
-// https://wazacs.tistory.com/36
-const nodeRef = useRef(null);
+  const [state, setState] = useState({
+    activeTab: 0
+  });
+
+  // draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
+  // https://wazacs.tistory.com/36
+  const nodeRef = useRef(null);
+
+  const { activeTab } = state;
+
+
+  const handleChange = (
+    value: number,
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    console.log({ value, event });
+    setState({ activeTab: value });
+  };
+
 
   return (
 
     <Draggable nodeRef={nodeRef} >
+      <Window ref={nodeRef} id="parentWindow"
+        style={{
+          position: 'absolute',
+          top: '25%',
+          zIndex: '99',
+          width: '500px',
+          height: '500px',
+          display: showDiv ? 'block' : 'none',
+        }}
+      >
+        <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
+          <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
+          <Button onClick={CloseButtonClick}>
+            <CloseIcon></CloseIcon>
+          </Button>
+        </WindowHeader>
 
 
-    <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px' , zIndex: '99', width: '300px', height: '500px', display: showDiv ? 'block' : 'none' }} >
-      <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'pink' }}>
-        <span style={{ textShadow: '0px 1px 2px #000000' }}>guest_book.txt</span>
-        <Button onClick={CloseButtonClick}>
-          <CloseIcon></CloseIcon>
-        </Button>
-      </WindowHeader>
-
-
-      <WindowContent>
-        ㅎㅇ
-      </WindowContent>
-    </Window>
-
-    </Draggable>
+        <WindowContent>
+          <Tabs value={activeTab} onChange={handleChange}>
+            <Tab value={0}>about</Tab>
+            <Tab value={1}>skill</Tab>
+            <Tab value={2}>project</Tab>
+          </Tabs>
+          <TabBody style={{ height: 350 }}>
+            {activeTab === 0 && (
+              <div>
+                <AboutTab />
+              </div>
+            )}
+            {activeTab === 1 && (
+              <div>
+                <SkillTab />
+              </div>
+            )}
+            {activeTab === 2 && (
+              <div>
+                <ProjectTab />
+              </div>
+            )}
+          </TabBody>
+        </WindowContent>
+      </Window>
+    </Draggable >
   );
 }
