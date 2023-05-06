@@ -20,9 +20,14 @@ personal portfolio web project
 <img src="https://img.shields.io/badge/yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white"/>
 </p>
 
+## :tulip: UI Framework
+
+<p>
+<img src="https://img.shields.io/badge/react95-909090?style=for-the-badge&logo=react&logoColor=white"/>
+</p>
+
 ## ✨ Library
 <p>
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
 <img src="https://img.shields.io/badge/createreactapp-09D3AC?style=for-the-badge&logo=createreactapp&logoColor=white"/>
-<img src="https://img.shields.io/badge/react95-909090?style=for-the-badge&logo=react&logoColor=white"/>
 </p>
