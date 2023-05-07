@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { CurrentTime } from "./appbar-time";
 import { useState } from "react";
 import Welcome from "../welcome/welcome_window";
+import { AppButtons } from ".";
 
 import BarStartImg from "../../imgs/bar/bar-win_start.png";
 
@@ -87,18 +88,18 @@ const Bar = () => {
               </MenuList>
             )}
 
-            <Button variant="thin" style={{ display: 'flax', zIndex: '101', marginLeft: '100px' }}>
-              👨‍💻
-            </Button>
+            {/* 하단 작은 버튼들 */}
+            <AppButtons />
 
             <FrameContainer>
               <Frame variant="well" style={{ position: 'absolute', height: '35px', width: '78px', right: '2px' }}>
                 <CurrentTime />
               </Frame>
             </FrameContainer>
+
           </div>
         </Toolbar>
-      </AppBar>
+      </AppBar >
     </>
 
 

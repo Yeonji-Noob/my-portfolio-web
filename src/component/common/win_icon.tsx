@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import icon1 from "../../imgs/icons/chrome.png";
-// import icon2 from "../../imgs/icons/notepad.png";
-import icon3 from "../../imgs/icons/coffee.png";
+import icon3 from "../../imgs/icons/mine_sweeper.png";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
 import { GuestBook } from "../guest_book/guest_window";
 import { Notepad } from "../notepad/notepad_icon";
 import { ChromeIcon } from "../chrome/chrome_icon";
+import { MineSweeper } from "../mine_sweeper/mine_sweeper_icon";
 
 // import { VideoBg2 } from "../../containers/bg"
 
@@ -101,15 +100,9 @@ const WinIcon: React.FC = () => {
 
             <Notepad></Notepad>
 
-            <DivIconContainer top="175px" left="10px">
-                <Icon src={icon3} top="15px" left="13px">
-                </Icon>
-                <Icon1Label top="35px" left="5px">
-                    coffee
-                </Icon1Label>
-            </DivIconContainer>
+            <MineSweeper></MineSweeper>
 
-            
+
             <DivIconContainer top="260px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}>
                 <Icon src={icon4} top="15px" left="13px">
                 </Icon>
@@ -118,7 +111,7 @@ const WinIcon: React.FC = () => {
                 </Icon1Label>
             </DivIconContainer>
 
-                <GuestBook showDiv={showDiv} setShowDiv={setShowDiv} />
+            <GuestBook showDiv={showDiv} setShowDiv={setShowDiv} />
 
             <DivIconContainer onClick={IconClick} top="14px" left="86px">
                 <Icon src={icon5} top="8px" left="14px">

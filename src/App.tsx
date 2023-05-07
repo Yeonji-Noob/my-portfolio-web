@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 
-import GlobalStyle from "./styles/global_style"
+import { GlobalStyle, GlobalFont } from "./styles"
 import BackGround from "./containers/bg";
 import Bar from "./component/common/appbar";
 import WinIcon from "./component/common/win_icon";
@@ -16,6 +16,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <GlobalFont />
       <ThemeProvider theme={Marine}>
         <WinIcon />
         <BackGround />
