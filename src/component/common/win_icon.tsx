@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import icon3 from "../../imgs/icons/mine_sweeper.png";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 import icon5 from "../../imgs/icons/guest_book.png";
 import { GuestBook } from "../guest_book/guest_window";

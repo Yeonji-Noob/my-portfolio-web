@@ -105,8 +105,8 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
     <Draggable nodeRef={nodeRef} >
 
       <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px', zIndex: '99', display: showDiv ? 'block' : 'none' }} >
-        <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'skyblue' }}>
-          <span style={{ textShadow: '0px 1px 2px #000000' }}>Untitled - Notepad</span>
+        <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'Royalblue' }}>
+          <span style={{ textShadow: '0px 1px 2px #000000' }}>mine_sweeper</span>
 
           <div style={{ display: 'flex', width: '93px' }}>
             <Button variant='raised' disabled>
@@ -122,7 +122,8 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
         </WindowHeader>
 
-        <object data="https://mines.vercel.app/" width={400} height={450} type="text/html"></object>
+        {/* 여기가 지뢰찾기 들어갈 공간 */}
+        <iframe src="https://mines.vercel.app/" width={316} height={440} ></iframe>
 
       </Window>
 
