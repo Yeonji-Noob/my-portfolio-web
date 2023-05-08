@@ -1,11 +1,12 @@
 import { Dispatch, SetStateAction } from "react";
-import { Window, WindowHeader, WindowContent, Button, Frame, Separator, Monitor } from "react95";
+import { Window, WindowHeader, WindowContent, Button, Frame, Separator, Monitor, ColorInput } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
 
 import MonitorImg from "../../imgs/bg/welcome-monitor_background.jpg"
 import TipIcon from "../../imgs/icons/tip.png"
+import { GitHub } from "../common";
 
 const CloseIcon = styled.span`
 
@@ -131,9 +132,9 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
                         </Frame>
                         <ButtonDivFlex>
-                            <Button style={{ width: '150px', marginTop: '16px', marginLeft: '18px' }}>Default</Button>
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>Default</Button>
+                            <Button style={{ width: '150px', marginTop: '16px', marginLeft: '18px' }}>about</Button>
+                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}><GitHub></GitHub></Button>
+                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>send mail📧</Button>
                             <Separator style={{ width: '150px', marginTop: '40px', marginLeft: '18px' }} />
                             <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }} onClick={CloseButtonClick} >Close</Button>
                         </ButtonDivFlex>

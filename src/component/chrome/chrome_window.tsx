@@ -97,7 +97,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
             <Tab value={1}>skill</Tab>
             <Tab value={2}>project</Tab>
           </Tabs>
-          <TabBody style={{ height: 350 }}>
+          <TabBody style={{ height: 350, padding: '11px' }}>
             {activeTab === 0 && (
               <div>
                 <AboutTab />
