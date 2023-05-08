@@ -1,7 +1,7 @@
 import { Button, ScrollView } from "react95";
 import { GuestLists } from ".";
 
-export const GuestList = () => {
+export const GuestListBox = () => {
 
 
 
@@ -11,7 +11,7 @@ export const GuestList = () => {
         방명록 남기기
       </Button>
 
-      <ScrollView style={{ padding: '0.2rem', width: '260px', height: '370px', fontFamily: 'NeoDungGeunMo', backgroundColor: 'lightyellow' }}>
+      <ScrollView style={{ padding: '0.2rem', minWidth: '260px', height: '370px', fontFamily: 'NeoDungGeunMo', backgroundColor: 'lightyellow' }}>
 
         <GuestLists />
 

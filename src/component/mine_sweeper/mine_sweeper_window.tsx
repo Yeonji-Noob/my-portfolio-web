@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Window, WindowHeader, WindowContent, Button, TextInput } from "react95";
+import { Window, WindowHeader, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";

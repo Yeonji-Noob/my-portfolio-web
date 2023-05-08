@@ -1,7 +1,8 @@
 import Videobgpc from "../imgs/bg/background-web_ver.mp4";
-// import Videobgpc2 from "../imgs/bg/background-web2_ver.mp4"
+import Videobgpc2 from "../imgs/bg/background-web2_ver.mp4"
 import Videobgmb from "../imgs/bg/background-mobile_ver.mp4";
 import styled from "styled-components";
+import { useHamsterStore } from "../component/hamster/hamster-icon";
 
 
 
@@ -65,19 +66,26 @@ background-color: #fff09a;
 `;
 
 const BackGround: React.FC = () => {
-    return (
 
-        <BgContainer>
-            <VideoBg className="pc" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%">
-            </VideoBg>
-            <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
-            </MobileVideoBg>
-            {/* <VideoBg2 className="pc2" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%">
-            </VideoBg2> */}
-            <Bg></Bg>
-        </BgContainer>
 
-    );
+  const isHamster = useHamsterStore((state: { isHamster: boolean }) => state.isHamster);
+
+  return (
+
+    <BgContainer>
+      <VideoBg className="pc" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%"
+        style={{ display: isHamster ? 'none' : 'block' }}>
+      </VideoBg>
+      <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
+      </MobileVideoBg>
+      <VideoBg className="pc2" src={Videobgpc2} playsInline muted autoPlay loop width="100%" height="100%"
+        style={{ display: isHamster ? 'block' : 'none' }}
+      >
+      </VideoBg>
+      <Bg></Bg>
+    </BgContainer>
+
+  );
 }
 
 export default BackGround;

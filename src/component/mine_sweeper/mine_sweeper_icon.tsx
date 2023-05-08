@@ -1,72 +1,14 @@
 import { useState } from "react";
-import styled from "styled-components";
+import { useHamsterStore } from "../hamster/hamster-icon";
 import icon3 from "../../imgs/icons/mine_sweeper.png";
 import { MineWindow } from "./mine_sweeper_window";
 
-
-interface DivProps {
-  top: string;
-  left: string;
-}
-
-const DivIconContainer = styled.div<DivProps>`
-
-position: absolute; 
-top: ${props => props.top};
-left: ${props => props.left};
-width: 60px;
-height: 75px;
-
-`;
+import { ComponentsProps } from "../common/win-icon";
 
 
-//////////////////////////////////////////////
-//////////////////////////////////////////////
+export const MineSweeper = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps) => {
 
-
-interface ImgProps {
-  top: string;
-  left: string;
-}
-
-const Icon = styled.img<ImgProps>`
-
-position: absolute;
-width: 32px;
-height: 32px;
-left: ${props => props.left};
-top: ${props => props.top};
-`;
-
-//////////////////////////////////////////////
-//////////////////////////////////////////////
-
-interface TopLeftProps {
-  top: string;
-  left: string;
-}
-
-
-const Icon1Label = styled.p<TopLeftProps>`
-display: inline-block;
-position: absolute;
-top: ${props => props.top};
-left: ${props => props.left};
-line-height: 15px;
-cursor: 'pointer';
-
-  &:hover {
-      border: 0.5px white dashed;
-      background-color: #0000ffda;
-      color: white;
-  }
-
-`;
-
-
-
-export const MineSweeper = () => {
-
+  const isHamster = useHamsterStore((state: { isHamster: boolean }) => state.isHamster);
 
   const [showDiv, setShowDiv] = useState<boolean>(false)
 
@@ -77,10 +19,11 @@ export const MineSweeper = () => {
   return (
     <>
       <MineWindow showDiv={showDiv} setShowDiv={setShowDiv} ></MineWindow>
-      <DivIconContainer onClick={IconClick} top="170px" left="10px">
+      <DivIconContainer onClick={IconClick} top="170px" left="10px"
+        style={{ cursor: "url(https://cur.cursors-4u.net/others/oth-2/oth197.cur), auto" }}>
         <Icon src={icon3} top="15px" left="13px">
         </Icon>
-        <Icon1Label top="35px" left="5px">
+        <Icon1Label top="35px" left="5px" style={{ color: isHamster ? 'white' : '' }}>
           mine_
           sweeper
         </Icon1Label>

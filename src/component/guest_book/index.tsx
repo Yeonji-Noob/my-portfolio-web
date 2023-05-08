@@ -1,5 +1,7 @@
-export { GuestList } from "./guest-listbox";
-export { GuestLists } from "./guest-lists";
+export { GuestLists } from "./guest--lists";
+export { GuestListBox } from "./guest-listbox";
+export { GuestBookWindow } from "./guest_window";
+
 
 
 export { ReactComponent as JS } from "../../imgs/guest/js.svg";

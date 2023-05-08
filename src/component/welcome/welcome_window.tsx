@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react";
-import { Window, WindowHeader, WindowContent, Button, Frame, Separator, Monitor, ColorInput } from "react95";
+import { Window, WindowHeader, WindowContent, Button, Frame, Separator, Monitor } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
@@ -43,7 +43,7 @@ const ButtonDivFlex = styled.div`
 display: flex;
 flex-direction: column;
 
-@media (max-width: 300px) {
+@media (max-width: 375px) {
     display: none;
 }
 
@@ -94,7 +94,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
         <Draggable nodeRef={nodeRef} >
 
 
-            <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '10%', zIndex: '99', width: '500px', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
+            <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '10%', zIndex: '98', maxWidth: '100vw', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
                 <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
                     <span style={{ textShadow: '0px 1px 2px #000000' }}>Welcome</span>
                     <Button onClick={CloseButtonClick}>
@@ -132,11 +132,11 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
                         </Frame>
                         <ButtonDivFlex>
-                            <Button style={{ width: '150px', marginTop: '16px', marginLeft: '18px' }}>about</Button>
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}><GitHub></GitHub></Button>
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }}>send mail📧</Button>
-                            <Separator style={{ width: '150px', marginTop: '40px', marginLeft: '18px' }} />
-                            <Button style={{ width: '150px', marginTop: '12px', marginLeft: '18px' }} onClick={CloseButtonClick} >Close</Button>
+                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '16px', marginLeft: '2vw' }}>about</Button>
+                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '12px', marginLeft: '2vw' }}><GitHub></GitHub></Button>
+                            <Button style={{ width: '10vw', minWidth: '80px', marginTop: '12px', marginLeft: '2vw' }}>mail📧</Button>
+                            <Separator style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '40px', marginLeft: '2vw' }} />
+                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '12px', marginLeft: '2vw' }} onClick={CloseButtonClick} >Close</Button>
                         </ButtonDivFlex>
 
                     </div>
