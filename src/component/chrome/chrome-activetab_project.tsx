@@ -26,6 +26,14 @@ font-family: 'NeoDungGeunMo';
 
 `;
 
+const ProjectFlexBox = styled.div`
+
+display: flex; 
+margin: 30px 0;
+
+
+`;
+
 export const ProjectTab = () => {
 
 
@@ -53,17 +61,27 @@ export const ProjectTab = () => {
   ];
 
   return (
-    <ScrollView style={{ padding: '0.5rem', background: 'lightyellow', width: '430px', height: '310px' }}>
+    <ScrollView
+      style={{
+        padding: '0.5rem',
+        background: 'lightyellow',
+        width: '81vw',
+        maxWidth: '630px',
+        height: '70vw',
+        minHeight: '310px',
+        maxHeight: '500px'
+      }}>
 
 
       {project.map((element) => {
 
         return (
-          <div style={{ display: 'flex', margin: '30px 0' }}>
+          <ProjectFlexBox>
             <div>
               <Monitor backgroundStyles={{ backgroundImage: `url(${element.img})` }}></Monitor>
             </div>
             <div>
+
               <ProjectTitle>
                 {element.title}
               </ProjectTitle>
@@ -77,7 +95,7 @@ export const ProjectTab = () => {
               </a>
 
             </div>
-          </div>
+          </ProjectFlexBox>
         );
 
       })}

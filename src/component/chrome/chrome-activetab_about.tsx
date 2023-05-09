@@ -73,7 +73,7 @@ export const AboutTab = () => {
   return (
     <>
       <ScrollView
-        style={{ padding: '1rem', background: 'lightyellow', width: '420px', height: '310px' }}
+        style={{ padding: '1rem', background: 'lightyellow', width: '81vw', maxWidth: '630px', height: '70vw', minHeight: '310px', maxHeight: '500px' }}
       >
         <GroupBox label='about me' variant='flat'>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>

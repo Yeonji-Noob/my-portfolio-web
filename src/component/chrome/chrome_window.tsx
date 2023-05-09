@@ -78,12 +78,22 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
           position: 'absolute',
           top: '25%',
           zIndex: '99',
-          width: '500px',
-          height: '500px',
+          maxWidth: '700px',
+          width: '95vw',
+          minHeight: '400px',
+          height: '100vw',
+          maxHeight: '650px',
           display: showDiv ? 'block' : 'none',
         }}
       >
-        <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
+        <WindowHeader
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '37px',
+            backgroundColor: 'blue'
+          }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
           <Button onClick={CloseButtonClick}>
             <CloseIcon></CloseIcon>
@@ -97,7 +107,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
             <Tab value={1}>skill</Tab>
             <Tab value={2}>project</Tab>
           </Tabs>
-          <TabBody style={{ height: 350, padding: '11px' }}>
+          <TabBody style={{ minHeight: '320px', height: '75vw', maxHeight: '530px', padding: '11px' }}>
             {activeTab === 0 && (
               <div>
                 <AboutTab />
