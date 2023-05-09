@@ -73,11 +73,22 @@ export const AboutTab = () => {
   return (
     <>
       <ScrollView
-        style={{ padding: '1rem', background: 'lightyellow', width: '81vw', maxWidth: '630px', height: '70vw', minHeight: '310px', maxHeight: '500px' }}
+        style={{
+          background: 'lightyellow',
+          margin: '0px',
+
+          minWidth: '235px',
+          width: '75vw',
+          maxWidth: '643px',
+
+          height: '64vw',
+          minHeight: '260px',
+          maxHeight: '525px'
+        }}
       >
         <GroupBox label='about me' variant='flat'>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>
-            <img src={aboutImg} alt="my_picture" style={{ position: 'relative', left: '10%' }} />
+            <img src={aboutImg} alt="my_picture" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }} />
             <p style={{ textAlign: 'center' }}>
               Son Yeon-ji
             </p>

@@ -104,7 +104,21 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =
 
         <Draggable nodeRef={nodeRef} >
 
-            <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px', zIndex: '99', width: '40vw', minWidth: '270px', maxWidth: '40vw', height: '500px', display: showDiv ? 'block' : 'none' }} >
+            <Window ref={nodeRef} id="parentWindow"
+                style={{
+                    position: 'absolute',
+                    top: '100px',
+                    zIndex: '99',
+
+                    width: '40vw',
+                    minWidth: '270px',
+                    maxWidth: '500px',
+
+                    maxHeight: '500px',
+
+                    display: showDiv ? 'block' : 'none'
+                }} >
+
                 <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'skyblue' }}>
                     <span style={{ textShadow: '0px 1px 2px #000000' }}>Untitled - Notepad</span>
 

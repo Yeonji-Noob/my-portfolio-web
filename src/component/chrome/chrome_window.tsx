@@ -78,10 +78,13 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
           position: 'absolute',
           top: '25%',
           zIndex: '99',
+
           maxWidth: '700px',
-          width: '95vw',
+          width: '87vw',
+          minWidth: '280px',
+
           minHeight: '400px',
-          height: '100vw',
+          height: '90vw',
           maxHeight: '650px',
           display: showDiv ? 'block' : 'none',
         }}
@@ -101,13 +104,29 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
         </WindowHeader>
 
 
-        <WindowContent>
+        <WindowContent
+          style={{
+            padding: 'clamp(0.1rem ,3vw, 1rem)',
+            paddingLeft: '0.6rem',
+            paddingTop: '0.8rem',
+          }}>
           <Tabs value={activeTab} onChange={handleChange}>
             <Tab value={0}>about</Tab>
             <Tab value={1}>skill</Tab>
             <Tab value={2}>project</Tab>
           </Tabs>
-          <TabBody style={{ minHeight: '320px', height: '75vw', maxHeight: '530px', padding: '11px' }}>
+          <TabBody
+            style={{
+              minWidth: '255px',
+              width: '80vw',
+              maxWidth: '670px',
+
+              minHeight: '280px',
+              height: '68vw',
+              maxHeight: '545px',
+
+              padding: '0.5rem'
+            }}>
             {activeTab === 0 && (
               <div>
                 <AboutTab />

@@ -1,7 +1,47 @@
+import styled from "styled-components";
 import { Button } from "react95";
 import { GitHub, KakaoTalk, Toss, Mail } from ".";
 
+
+const ButtonDivContainer = styled.div`
+
+  display: flex;
+
+  & .appbar-mail-button {
+
+    display: flax; 
+    z-index: 101;
+    padding: 0; 
+    margin-left: 100px;
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+
+`;
+
+
+const ButtonDiv = styled.div`
+
+    display: flex;
+    position: relative;
+
+  & .appbar-icon-buttons {
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+
+  }
+
+`;
+
+
 export const AppButtons = () => {
+
+
+
 
 
   const buttons = [
@@ -23,11 +63,9 @@ export const AppButtons = () => {
   ];
 
   return (
-    <>
+    <ButtonDivContainer>
 
-      <Button variant="thin" style={{
-        display: 'flax', zIndex: '101', padding: '0', marginLeft: '100px'
-      }}>
+      <Button className="appbar-mail-button" variant="thin" >
         <a href="mailto:rhcp3885@gmail.com" target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
           < Mail />
         </a>
@@ -40,19 +78,24 @@ export const AppButtons = () => {
 
         return (
           <div key={name.key}>
-            <Button variant="thin" style={{
-              display: 'flax', zIndex: '101', padding: '0 5px'
-            }} >
-              <a href={name.href} target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
-                < Icon />
-              </a>
-            </Button>
+            <ButtonDiv>
+              <Button className="appbar-icon-buttons" variant="thin"
+                style={{
+                  display: 'flax',
+                  zIndex: '101',
+                  padding: '0 5px'
+                }}>
+                <a href={name.href} target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
+                  < Icon />
+                </a>
+              </Button>
+            </ButtonDiv>
           </div>
         );
       })}
 
 
 
-    </>
+    </ButtonDivContainer>
   );
 }

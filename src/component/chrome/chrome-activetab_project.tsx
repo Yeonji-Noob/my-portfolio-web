@@ -29,8 +29,21 @@ font-family: 'NeoDungGeunMo';
 const ProjectFlexBox = styled.div`
 
 display: flex; 
-margin: 30px 0;
+margin: 30px;
+justify-content: space-around;
 
+@media (max-width: 620px) {
+  position: relative;
+  flex-direction: column;
+  & div {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 350px) {
+  margin: 30px 0;
+  justify-items: start;
+}
 
 `;
 
@@ -63,13 +76,16 @@ export const ProjectTab = () => {
   return (
     <ScrollView
       style={{
-        padding: '0.5rem',
         background: 'lightyellow',
-        width: '81vw',
-        maxWidth: '630px',
-        height: '70vw',
-        minHeight: '310px',
-        maxHeight: '500px'
+        margin: '0px',
+
+        minWidth: '235px',
+        width: '75vw',
+        maxWidth: '643px',
+
+        height: '64vw',
+        minHeight: '260px',
+        maxHeight: '525px'
       }}>
 
 

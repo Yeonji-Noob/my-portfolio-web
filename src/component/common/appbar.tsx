@@ -1,9 +1,8 @@
 import { AppBar, Toolbar, Button, Frame, MenuList, MenuListItem, Separator, Handle } from "react95";
 import styled from "styled-components";
-import { CurrentTime } from "./appbar-time";
 import { useState } from "react";
 import Welcome from "../welcome/welcome_window";
-import { AppButtons } from ".";
+import { AppButtons, CurrentTime, GitHub, KakaoTalk, Toss, Mail, WelcomeIcon } from ".";
 
 import BarStartImg from "../../imgs/bar/bar-win_start.png";
 
@@ -15,18 +14,57 @@ height: 100%;
 
 `;
 
+const StartMenuContainer = styled.div`
+
+  & .kbwcaa:hover {
+    background: #ff558e;
+    cursor: pointer;
+  }
+
+`;
+
+
 
 const Bar = () => {
 
 
   const [isOpen, setOpen] = useState(false);
 
-
   const [showDiv, setShowDiv] = useState<boolean>(false)
 
   const IconClick = () => {
     setShowDiv(false);
   }
+
+  const appBarInfo = [
+
+    {
+      key: 0,
+      name: 'welcome!',
+      svg: <WelcomeIcon />
+    },
+    {
+      key: 1,
+      name: 'mail',
+      svg: <Mail />
+    },
+    {
+      key: 2,
+      name: 'gitHub',
+      svg: <GitHub className='github-icon' />
+    },
+    {
+      key: 3,
+      name: 'kakaoTalk',
+      svg: <KakaoTalk />
+    },
+    {
+      key: 4,
+      name: 'toss',
+      svg: <Toss />
+    }
+
+  ];
 
 
   return (
@@ -51,40 +89,38 @@ const Bar = () => {
               <MenuList
                 style={{
                   position: 'absolute',
-                  top: '-210px',
+                  top: '-300px',
                   left: '-2px',
-                  zIndex: '200'
-
+                  zIndex: '200',
+                  width: '140px',
                 }}
                 onClick={() => setOpen(false)}
               >
-                <MenuListItem onClick={IconClick}>
-                  <span role='img' aria-label='👨‍💻' >
-                    👨‍💻
-                  </span>
-                  welcome!
-                </MenuListItem>
 
-                <MenuListItem >
-                  <span role='img' aria-label='👨‍💻' >
-                    👨‍💻
-                  </span>
-                  chrome
-                </MenuListItem>
+                {appBarInfo.map(info => {
+                  return (
+                    <StartMenuContainer key={info.key}>
+                      <MenuListItem onClick={IconClick}>
+                        <span role='img' aria-label='Icon' style={{ lineHeight: '0' }} >
+                          {info.svg}
+                        </span>
+                        {info.name}
+                      </MenuListItem>
+                    </StartMenuContainer>
 
-                <MenuListItem>
-                  <span role='img' aria-label='📁'>
-                    📁
-                  </span>
-                  My account
-                </MenuListItem>
+                  );
+                })}
+
                 <Separator />
+
                 <MenuListItem disabled>
                   <span role='img' aria-label='🔙'>
                     🔙
                   </span>
                   Logout
                 </MenuListItem>
+
+
               </MenuList>
             )}
 
