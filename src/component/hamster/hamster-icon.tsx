@@ -27,7 +27,7 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
     <DivIconContainer top="260px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}
       onClick={() => setHamster(!isHamster)}
     >
-      <Icon src={icon4} top="15px" left="13px">
+      <Icon src={icon4} top="15px" left="13px" alt="hamster-icon">
       </Icon>
       <Icon1Label top="35px" left="3px" style={{ color: isHamster ? 'white' : '' }}>
         hamster

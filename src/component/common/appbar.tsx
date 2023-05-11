@@ -25,10 +25,10 @@ const StartMenuContainer = styled.div`
 
 
 
-const Bar = () => {
+const Bar: React.FC = () => {
 
 
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState<boolean>(false);
 
   const [showDiv, setShowDiv] = useState<boolean>(false)
 
@@ -36,32 +36,41 @@ const Bar = () => {
     setShowDiv(false);
   }
 
+  const handleClick = (link: string) => {
+    window.open(link, '_blank');
+  }
+
   const appBarInfo = [
 
     {
       key: 0,
       name: 'welcome!',
-      svg: <WelcomeIcon />
+      svg: <WelcomeIcon />,
+      link: IconClick
     },
     {
       key: 1,
       name: 'mail',
-      svg: <Mail />
+      svg: <Mail />,
+      link: () => handleClick('mailto:rhcp3885@gmail.com')
     },
     {
       key: 2,
       name: 'gitHub',
-      svg: <GitHub className='github-icon' />
+      svg: <GitHub className='github-icon' />,
+      link: () => handleClick('https://github.com/Yeonji-Noob')
     },
     {
       key: 3,
       name: 'kakaoTalk',
-      svg: <KakaoTalk />
+      svg: <KakaoTalk />,
+      link: () => handleClick('https://open.kakao.com/me/demi_iii')
     },
     {
       key: 4,
       name: 'toss',
-      svg: <Toss />
+      svg: <Toss />,
+      link: () => handleClick('https://toss.me/deminoob')
     }
 
   ];
@@ -100,7 +109,7 @@ const Bar = () => {
                 {appBarInfo.map(info => {
                   return (
                     <StartMenuContainer key={info.key}>
-                      <MenuListItem onClick={IconClick}>
+                      <MenuListItem onClick={info.link}>
                         <span role='img' aria-label='Icon' style={{ lineHeight: '0' }} >
                           {info.svg}
                         </span>

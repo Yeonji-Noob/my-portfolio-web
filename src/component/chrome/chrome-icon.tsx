@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useHamsterStore } from "../hamster/hamster-icon";
-import icon1 from "../../imgs/icons/chrome.png";
-import { ChromeWindow } from "./chrome_window";
+import { ChromeWindow } from "./index";
 import { ComponentsProps } from "../common/win-icon";
+
+import icon1 from "../../imgs/icons/chrome.png";
+
 
 export const ChromeIcon = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps) => {
 
@@ -19,7 +21,7 @@ export const ChromeIcon = ({ DivIconContainer, Icon, Icon1Label }: ComponentsPro
         <>
             <ChromeWindow showDiv={showDiv} setShowDiv={setShowDiv} ></ChromeWindow>
             <DivIconContainer onClick={IconClick} top="5px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-10/nat927.png), auto` }}>
-                <Icon src={icon1} top="15px" left="14px">
+                <Icon src={icon1} top="15px" left="14px" alt="chrome-icon">
                 </Icon>
                 <Icon1Label top="35px" left="6px" style={{ color: isHamster ? 'white' : '' }}>
                     chrome

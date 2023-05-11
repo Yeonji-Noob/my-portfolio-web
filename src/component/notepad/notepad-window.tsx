@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
 import { Window, WindowHeader, WindowContent, Button, TextInput } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
+import { ShowDivProps } from "../chrome/chrome_window";
 // import { Resizable } from 'react-resizable';
 
 const CloseIcon = styled.span`
@@ -80,14 +80,9 @@ display: inline-block;
     }
 `;
 
-interface ShowDivProps {
-    showDiv: boolean;
-    //set붙은 녀석은 boolean만 넣으면 안됨,,, 이렇게 해줘야 함
-    setShowDiv: Dispatch<SetStateAction<boolean>>
-}
 
 
-export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
+export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
     const CloseButtonClick = () => {
 
@@ -107,7 +102,9 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =
             <Window ref={nodeRef} id="parentWindow"
                 style={{
                     position: 'absolute',
-                    top: '100px',
+                    top: '25%',
+                    left: '50%',
+                    translate: '-50%',
                     zIndex: '99',
 
                     width: '40vw',

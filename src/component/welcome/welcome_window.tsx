@@ -77,10 +77,37 @@ interface ShowDivProps {
 
 const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
+
+    const buttonStyle = {
+        width: '10vw',
+        minWidth: '80px',
+        maxWidth: '31vw',
+        marginTop: '12px',
+        marginLeft: '2vw'
+    }
+
+    const aboutButtonStyle = { ...buttonStyle, marginTop: '16px' };
+
+    const separatorStyle = { ...buttonStyle, marginTop: '40px' };
+
+    const { maxWidth, ...mailButtonStyle } = buttonStyle;
+
+
+    //버튼을 클릭할 때 나타나는 주소
+    const handleClick = (link: string) => {
+        window.open(link, '_blank');
+    }
+
+
     const CloseButtonClick = () => {
+        setShowDiv(!showDiv);
+    }
 
-        setShowDiv(!showDiv)
-
+    const aboutWindowPopUp = () => {
+        const aboutWindow = document.getElementById('chrome-parentWindow');
+        if (aboutWindow !== null) {
+            aboutWindow.style.display = 'block';
+        }
     }
 
 
@@ -97,7 +124,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
             <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '10%', zIndex: '98', maxWidth: '100vw', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
                 <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
                     <span style={{ textShadow: '0px 1px 2px #000000' }}>Welcome</span>
-                    <Button onClick={CloseButtonClick}>
+                    <Button onClick={CloseButtonClick} aria-label="close-button">
                         <CloseIcon></CloseIcon>
                     </Button>
                 </WindowHeader>
@@ -132,11 +159,11 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
                         </Frame>
                         <ButtonDivFlex>
-                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '16px', marginLeft: '2vw' }}>about</Button>
-                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '12px', marginLeft: '2vw' }}><GitHub></GitHub></Button>
-                            <Button style={{ width: '10vw', minWidth: '80px', marginTop: '12px', marginLeft: '2vw' }}>mail📧</Button>
-                            <Separator style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '40px', marginLeft: '2vw' }} />
-                            <Button style={{ width: '10vw', minWidth: '80px', maxWidth: '31vw', marginTop: '12px', marginLeft: '2vw' }} onClick={CloseButtonClick} >Close</Button>
+                            <Button style={aboutButtonStyle} aria-label="about" onClick={aboutWindowPopUp}>about</Button>
+                            <Button style={{ ...buttonStyle }} onClick={() => handleClick('https://github.com/Yeonji-Noob')} aria-label="Github"><GitHub></GitHub></Button>
+                            <Button style={mailButtonStyle} onClick={() => handleClick('mailto:rhcp3885@gmail.com')} aria-label="mail">mail📧</Button>
+                            <Separator style={separatorStyle} />
+                            <Button style={{ ...buttonStyle }} onClick={CloseButtonClick} aria-label="close-button">Close</Button>
                         </ButtonDivFlex>
 
                     </div>

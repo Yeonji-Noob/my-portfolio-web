@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction } from "react";
 import { Window, WindowHeader, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
+import { ShowDivProps } from "../chrome/chrome_window";
 // import { Resizable } from 'react-resizable';
 
 const CloseIcon = styled.span`
@@ -80,11 +80,6 @@ display: inline-block;
     }
 `;
 
-interface ShowDivProps {
-  showDiv: boolean;
-  //set붙은 녀석은 boolean만 넣으면 안됨,,, 이렇게 해줘야 함
-  setShowDiv: Dispatch<SetStateAction<boolean>>
-}
 
 
 export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
@@ -123,7 +118,7 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
         </WindowHeader>
 
         {/* 여기가 지뢰찾기 들어갈 공간 */}
-        <iframe src="https://mines.vercel.app/" width={316} height={440} ></iframe>
+        <iframe src="https://mines.vercel.app/" width={316} height={440} title="mine_sweeper"></iframe>
 
       </Window>
 

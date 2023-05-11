@@ -52,18 +52,21 @@ export const ProjectTab = () => {
 
   const project = [
     {
+      key: 0,
       title: <span>SORIBADA <br /> redesign project</span>,
       content: '첫 react 프로젝트입니다.',
       img: project1,
       href: 'https://github.com/Yeonji-Noob/Website_project2',
     },
     {
+      key: 1,
       title: <span>TO DO LIST</span>,
       content: <span>typescript로 만든 <br /> TO DO LIST 입니다.</span>,
       img: project2,
       href: 'https://github.com/Yeonji-Noob/todolist',
     },
     {
+      key: 2,
       title: <span>국비학원 출결계산기</span>,
       content: <span>react와 vite, <br /> MUI UI Components를 <br /> 사용한  출결계산기입니다.</span>,
       img: project3,
@@ -92,7 +95,7 @@ export const ProjectTab = () => {
       {project.map((element) => {
 
         return (
-          <ProjectFlexBox>
+          <ProjectFlexBox key={element.key}>
             <div>
               <Monitor backgroundStyles={{ backgroundImage: `url(${element.img})` }}></Monitor>
             </div>

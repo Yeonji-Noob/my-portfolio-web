@@ -34,7 +34,7 @@ display: inline-block;
     }
 `;
 
-interface ShowDivProps {
+export interface ShowDivProps {
   showDiv: boolean;
   //set붙은 녀석은 boolean만 넣으면 안됨,,, 이렇게 해줘야 함
   setShowDiv: Dispatch<SetStateAction<boolean>>
@@ -63,9 +63,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
   const handleChange = (
     value: number,
-    event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    console.log({ value, event });
     setState({ activeTab: value });
   };
 
@@ -73,10 +71,12 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
   return (
 
     <Draggable nodeRef={nodeRef} >
-      <Window ref={nodeRef} id="parentWindow"
+      <Window ref={nodeRef} id="chrome-parentWindow"
         style={{
           position: 'absolute',
-          top: '25%',
+          top: '10%',
+          left: '50%',
+          translate: '-50%',
           zIndex: '99',
 
           maxWidth: '700px',

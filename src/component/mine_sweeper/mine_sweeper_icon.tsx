@@ -21,7 +21,7 @@ export const MineSweeper = ({ DivIconContainer, Icon, Icon1Label }: ComponentsPr
       <MineWindow showDiv={showDiv} setShowDiv={setShowDiv} ></MineWindow>
       <DivIconContainer onClick={IconClick} top="170px" left="10px"
         style={{ cursor: "url(https://cur.cursors-4u.net/others/oth-2/oth197.cur), auto" }}>
-        <Icon src={icon3} top="15px" left="13px">
+        <Icon src={icon3} top="15px" left="13px" alt="mine_sweeper-icon">
         </Icon>
         <Icon1Label top="35px" left="5px" style={{ color: isHamster ? 'white' : '' }}>
           mine_

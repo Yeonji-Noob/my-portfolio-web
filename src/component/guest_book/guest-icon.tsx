@@ -26,7 +26,7 @@ export const GuestBook = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProp
     <>
       <GuestBookWindow showDiv={showDiv} setShowDiv={setShowDiv}></GuestBookWindow>
       <DivIconContainer onClick={IconClick} top="14px" left="86px">
-        <Icon src={icon5} top="8px" left="14px">
+        <Icon src={icon5} top="8px" left="14px" alt="guestbook-icon">
         </Icon>
         <Icon1Label top="26px" left="6px" style={{ color: isHamster ? 'white' : '' }}>
           guest_

@@ -66,7 +66,7 @@ export const AppButtons = () => {
     <ButtonDivContainer>
 
       <Button className="appbar-mail-button" variant="thin" >
-        <a href="mailto:rhcp3885@gmail.com" target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
+        <a href="mailto:rhcp3885@gmail.com" target="_blank" rel="noreferrer" style={{ zIndex: '102' }} aria-label="mail">
           < Mail />
         </a>
       </Button>
@@ -85,7 +85,7 @@ export const AppButtons = () => {
                   zIndex: '101',
                   padding: '0 5px'
                 }}>
-                <a href={name.href} target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
+                <a href={name.href} target="_blank" rel="noreferrer" style={{ zIndex: '102' }} aria-label="link">
                   < Icon />
                 </a>
               </Button>

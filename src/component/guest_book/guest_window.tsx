@@ -1,8 +1,8 @@
-import { Dispatch, SetStateAction, useRef } from "react";
+import { useRef } from "react";
 import { Window, WindowHeader, WindowContent, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-
+import { ShowDivProps } from "../chrome/chrome_window";
 import { GuestListBox } from "./index";
 
 const CloseIcon = styled.span`
@@ -35,13 +35,6 @@ display: inline-block;
     }
 `;
 
-interface ShowDivProps {
-  showDiv: boolean;
-  //set붙은 녀석은 boolean만 넣으면 안됨,,, 이렇게 해줘야 함
-  setShowDiv: Dispatch<SetStateAction<boolean>>
-}
-
-
 
 // 문제 해결 (4/8)
 
@@ -55,7 +48,7 @@ interface ShowDivProps {
 
 
 
-export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
+export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
   const CloseButtonClick = () => {
 
@@ -72,7 +65,18 @@ export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv })
     <Draggable nodeRef={nodeRef} >
 
 
-      <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px', zIndex: '99', minWidth: '300px', width: '30vw', height: '500px', display: showDiv ? 'block' : 'none' }} >
+      <Window ref={nodeRef} id="parentWindow"
+        style={{
+          position: 'absolute',
+          top: '20%',
+          left: '50%',
+          translate: '-50%',
+          zIndex: '99',
+          minWidth: '300px',
+          width: '30vw', height:
+            '500px',
+          display: showDiv ? 'block' : 'none'
+        }} >
         <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'pink' }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>guest_book.txt</span>
           <Button onClick={CloseButtonClick}>
