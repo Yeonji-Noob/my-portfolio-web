@@ -86,7 +86,7 @@ export const AboutTab = () => {
           maxHeight: '525px'
         }}
       >
-        <GroupBox label='about me' variant='flat'>
+        <GroupBox label='about me' variant='flat' style={{ margin: '20px' }}>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>
             <img src={aboutImg} alt="my_picture" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }} />
             <p style={{ textAlign: 'center' }}>
@@ -101,7 +101,7 @@ export const AboutTab = () => {
           </div>
         </GroupBox>
         <br />
-        <GroupBox label='contact' variant='flat'>
+        <GroupBox label='contact' variant='flat' style={{ margin: '20px' }}>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>
             <span>
               링크들

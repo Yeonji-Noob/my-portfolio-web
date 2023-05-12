@@ -1,6 +1,7 @@
 export { GuestLists } from "./guest--lists";
 export { GuestListBox } from "./guest-listbox";
 export { GuestBookWindow } from "./guest_window";
+export { GuestWarningWindow } from "./guest-warning_window";
 
 
 
@@ -9,3 +10,4 @@ export { ReactComponent as TS } from "../../imgs/guest/ts.svg";
 export { ReactComponent as Stallman } from "../../imgs/guest/stallman.svg";
 export { ReactComponent as ChatGPT } from "../../imgs/guest/chatGPT.svg";
 export { ReactComponent as SteveJobs } from "../../imgs/guest/steve_jobs.svg";
+export { ReactComponent as Warning } from "../../imgs/icons/warning_icon.svg";

@@ -5,7 +5,7 @@ import project1 from "../../imgs/project_img/soba.gif";
 import project2 from "../../imgs/project_img/todolist.gif";
 import project3 from "../../imgs/project_img/calc.gif";
 
-import { GitHub30pixel } from "./index";
+import { GitHub30pixel, Mobile, MobileNotSupported } from "./index";
 
 const ProjectTitle = styled.p`
 
@@ -57,6 +57,7 @@ export const ProjectTab = () => {
       content: '첫 react 프로젝트입니다.',
       img: project1,
       href: 'https://github.com/Yeonji-Noob/Website_project2',
+      ResponsiveWeb: < MobileNotSupported />
     },
     {
       key: 1,
@@ -64,6 +65,7 @@ export const ProjectTab = () => {
       content: <span>typescript로 만든 <br /> TO DO LIST 입니다.</span>,
       img: project2,
       href: 'https://github.com/Yeonji-Noob/todolist',
+      ResponsiveWeb: <Mobile />
     },
     {
       key: 2,
@@ -71,6 +73,7 @@ export const ProjectTab = () => {
       content: <span>react와 vite, <br /> MUI UI Components를 <br /> 사용한  출결계산기입니다.</span>,
       img: project3,
       href: 'https://github.com/Yeonji-Noob/Attendance-Calculator',
+      ResponsiveWeb: <Mobile />
     },
 
 
@@ -112,6 +115,12 @@ export const ProjectTab = () => {
               <a href={element.href} target="_blank" rel="noreferrer" style={{ zIndex: '102' }}>
                 <GitHub30pixel style={{ marginLeft: '10px', cursor: 'pointer' }}></GitHub30pixel>
               </a>
+
+              <div style={{ display: 'inline-block', marginLeft: '5px' }}>
+                {element.ResponsiveWeb}
+              </div>
+
+
 
             </div>
           </ProjectFlexBox>

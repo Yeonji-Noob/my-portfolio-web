@@ -5,3 +5,5 @@ export { ChromeWindow } from "./chrome_window";
 
 
 export { ReactComponent as GitHub30pixel } from "../../imgs/project_img/github_30.svg";
+export { ReactComponent as Mobile } from "../../imgs/project_img/mobile.svg";
+export { ReactComponent as MobileNotSupported } from "../../imgs/project_img/mobile_x.svg";
