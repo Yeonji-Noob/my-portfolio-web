@@ -4,6 +4,7 @@ import styled from "styled-components";
 import project1 from "../../imgs/project_img/soba.gif";
 import project2 from "../../imgs/project_img/todolist.gif";
 import project3 from "../../imgs/project_img/calc.gif";
+import project4 from "../../imgs/project_img/galaga.gif"
 
 import { GitHub30pixel, Mobile, MobileNotSupported } from "./index";
 
@@ -75,6 +76,14 @@ export const ProjectTab = () => {
       href: 'https://github.com/Yeonji-Noob/Attendance-Calculator',
       ResponsiveWeb: <Mobile />
     },
+    {
+      key: 3,
+      title: <span>Demi_game_galaga <br /> (v2.0.0)</span>,
+      content: <span>vanilla javascript로 만든 <br /> galaga 게임입니다.</span>,
+      img: project4,
+      href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
+      ResponsiveWeb: <Mobile />
+    }
 
 
   ];
