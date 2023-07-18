@@ -1,6 +1,7 @@
 import { GroupBox, ScrollView } from "react95";
 // import styled from "styled-components";
-import aboutImg from "../../imgs/about_image.jpg";
+import aboutImg from "../../imgs/about/about_image.jpg";
+import catImg from "../../imgs/about/my_cat.jpg";
 
 
 export const AboutTab = () => {
@@ -103,11 +104,12 @@ export const AboutTab = () => {
         <br />
         <GroupBox label='TMI' variant='flat' style={{ margin: '20px' }}>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>
-            <span style={{ fontSize: '14px', fontFamily: 'NeoDungGeunMo' }}>
+            <img src={catImg} alt="cat_picture" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)' }} /> <br />
+            <p style={{ fontSize: '14px', fontFamily: 'NeoDungGeunMo', textAlign: 'center' }}>
               고양이를 키워요. (이름은 찡찡이에요) <br />
-              절에서 종무원장으로 2년 일했어요. (스님아님) <br />
+              절에서 종무원장으로 2년 일했어요. <br /> (스님은 아님) <br />
               가끔 그림을 그려요.
-            </span>
+            </p>
           </div>
         </GroupBox>
       </ScrollView >
