@@ -21,11 +21,11 @@ const Bar: React.FC = () => {
 
   const IconClick = () => {
     setShowDiv(false);
-  }
+  };
 
   const handleClick = (link: string) => {
     window.open(link, '_blank');
-  }
+  };
 
   const appBarInfo = [
 
@@ -72,7 +72,8 @@ const Bar: React.FC = () => {
         <Toolbar>
           <div style={{ display: 'flex', position: 'relative', width: '100%', height: '50px' }}>
 
-            <Button onClick={() => setOpen(!isOpen)} onTouchStart={() => setOpen(!isOpen)}
+            <Button
+              onClick={() => setOpen(!isOpen)}
               active={isOpen}
               style={{ position: 'fixed', zIndex: '100', fontWeight: 'bold', marginTop: '0px' }}>
               <img src={BarStartImg} alt="start-img" style={{ height: '20px', marginRight: '4px' }} />
