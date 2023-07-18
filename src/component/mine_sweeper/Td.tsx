@@ -2,7 +2,9 @@ import * as React from 'react';
 import { FC, memo, useCallback } from 'react';
 import { TableContext, CODE } from './MineSearch';
 import styled from 'styled-components';
+
 import { TdProps, RealTdProps, Codes } from './interface';
+
 import { clickMine, flagMine, normalizeCell, openCell, questionCell } from './action';
 
 
@@ -40,7 +42,7 @@ const getTdStyle = (code: Codes) => {
 };
 
 const getTdText = (code: Codes) => {
-  console.log('getTdtext');
+  // console.log('getTdtext');
   switch (code) {
     case CODE.NORMAL:
       return '';

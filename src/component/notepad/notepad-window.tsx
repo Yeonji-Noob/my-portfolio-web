@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import { Window, WindowHeader, WindowContent, Button, TextInput } from "react95";
 import styled from "styled-components";
@@ -21,6 +21,13 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
     // https://wazacs.tistory.com/36
     const nodeRef = useRef(null);
 
+
+    const [state, setState] = useState({ value: '' })
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+        setState({ value: e.target.value });
+
+    // const reset = () => setState({ value: '' });
 
     return (
 
@@ -62,9 +69,14 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
 
 
                 <WindowContent>
-                    <TextInput multiline
+                    <TextInput
+                        placeholder='텍스트를 쓸 수 있어요'
+                        value={state.value}
+                        multiline
                         rows={4}
-                        fullWidth style={{ width: '100%', height: '400px' }}>
+                        fullWidth
+                        style={{ width: '100%', height: '400px' }}
+                        onChange={handleChange}>
                     </TextInput>
                 </WindowContent>
             </Window>
