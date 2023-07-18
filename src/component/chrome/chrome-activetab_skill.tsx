@@ -9,7 +9,7 @@ export const SkillTab = () => {
           margin: '0px',
 
           minWidth: '235px',
-          width: '75vw',
+          width: '77vw',
           maxWidth: '643px',
 
           height: '64vw',
@@ -17,30 +17,13 @@ export const SkillTab = () => {
           maxHeight: '525px'
         }}
       >
-        <GroupBox variant='flat' label='Summary' style={{ fontSize: '13px' }}>
-          <li style={{ listStyleType: 'disc' }}>타입스크립트를 활용한 프로젝트 경험</li>
-          <li style={{ listStyleType: 'disc' }}>다양한 라이브러리를 이용할 수 있습니다.</li>
-          <li style={{ listStyleType: 'disc' }}>함수형 컴포넌트에 익숙합니다.</li>
+        <GroupBox variant='flat' label='Summary' style={{ fontSize: '13px', margin: '20px' }}>
+          <li style={{ listStyleType: 'disc' }}>타입스크립트를 좋아해요</li>
+          <li style={{ listStyleType: 'disc' }}>다양한 라이브러리를 이용합니다.</li>
+          <li style={{ listStyleType: 'disc' }}>리액트 함수형 컴포넌트에 익숙합니다.</li>
+          <li style={{ listStyleType: 'disc' }}>계속 새로운 툴을 써보고 있습니다.</li>
         </GroupBox>
-        <br />
-        HTML5
-        <br />
-        CSS3
-        <br />
-        Javascript
-        <br />
-        Typescript
-        <br />
-        React.js
-        <br />
-        SCSS
-        <br />
-        Styled-components
-        <br />
-        Github
-        <br />
-        <br />
-        <GroupBox variant='flat' label='Tools'>
+        <GroupBox variant='flat' label='Tools' style={{ margin: '20px' }}>
           Adobe Photoshop
           <br />
           Adobe Illustrator
@@ -50,12 +33,10 @@ export const SkillTab = () => {
           Clip studio
           <br />
           Figma
-          {/* <span role='img' aria-label='😍'>
-            😍
-          </span> */}
+          <br />
+          VScode
         </GroupBox>
-        <br />
-        <GroupBox variant='flat' label='Hobby' disabled>
+        <GroupBox variant='flat' label='Hobby' disabled style={{ margin: '20px' }}>
           Python
           {/* <span role='img' aria-label='😍'>
             😍

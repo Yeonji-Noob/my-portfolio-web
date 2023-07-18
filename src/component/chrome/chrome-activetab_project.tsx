@@ -45,7 +45,23 @@ export const ProjectTab = () => {
       img: project4,
       href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
       ResponsiveWeb: <Mobile />
-    }
+    },
+    {
+      key: 4,
+      title: <span>Demi95.computer</span>,
+      content: <span> Window95풍의 <br /> 개인 포트폴리오 사이트 </span>,
+      img: project4,
+      href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
+      ResponsiveWeb: <Mobile />
+    },
+    {
+      key: 5,
+      title: <span>Mine_sweeper</span>,
+      content: <span> 9x9 사이즈의 <br /> 지뢰찾기 게임 </span>,
+      img: project4,
+      href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
+      ResponsiveWeb: <Mobile />
+    },
 
 
   ];
@@ -57,7 +73,7 @@ export const ProjectTab = () => {
         margin: '0px',
 
         minWidth: '235px',
-        width: '75vw',
+        width: '77vw',
         maxWidth: '643px',
 
         height: '64vw',

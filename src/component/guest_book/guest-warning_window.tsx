@@ -33,11 +33,10 @@ export const GuestWarningWindow = () => {
           zIndex: '100',
 
           width: '40vw',
-          minWidth: '270px',
+          minWidth: '260px',
           maxWidth: '500px',
 
           height: '200px',
-          maxHeight: '500px',
 
           // display: showDiv ? 'block' : 'none'
         }} >
@@ -58,9 +57,13 @@ export const GuestWarningWindow = () => {
         </WindowHeader>
 
 
-        <WindowContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
-          <Warning></Warning>
-          <p>스팸성 광고 댓글때문에 <br /> 방명록 남기기를 막아놨습니다. <br /> 방명록을 남기고 싶으시다면</p>
+        <WindowContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around', height: '140px' }}>
+          <Warning style={{ marginRight: '15px' }}></Warning>
+          <p style={{ fontSize: '13px', fontFamily: 'NeoDungGeunMo' }}>
+            스팸성 광고 댓글때문에 방명록 남기기를 막아놨습니다! <br />
+            (아무튼 그러함) <br />
+            방명록을 남기고 싶다면 <br /> 개인 연락주시면 검열 후 넣어드림
+          </p>
         </WindowContent>
       </Window>
 

@@ -25,18 +25,18 @@ export const AboutTab = () => {
       color: 'black',
       logoColor: 'F7DF1E'
     },
-    {
-      key: 3,
-      name: 'JQuery',
-      color: 'lightgray',
-      logoColor: '0769AD'
-    },
-    {
-      key: 4,
-      name: 'Vue.js',
-      color: '4FC08D',
-      logoColor: 'white'
-    },
+    // {
+    //   key: 3,
+    //   name: 'JQuery',
+    //   color: 'lightgray',
+    //   logoColor: '0769AD'
+    // },
+    // {
+    //   key: 4,
+    //   name: 'Vue.js',
+    //   color: '4FC08D',
+    //   logoColor: 'white'
+    // },
     {
       key: 5,
       name: 'React',
@@ -101,10 +101,12 @@ export const AboutTab = () => {
           </div>
         </GroupBox>
         <br />
-        <GroupBox label='contact' variant='flat' style={{ margin: '20px' }}>
+        <GroupBox label='TMI' variant='flat' style={{ margin: '20px' }}>
           <div style={{ padding: '0.5em 0 0.5em 0' }}>
-            <span>
-              링크들
+            <span style={{ fontSize: '14px', fontFamily: 'NeoDungGeunMo' }}>
+              고양이를 키워요. (이름은 찡찡이에요) <br />
+              절에서 종무원장으로 2년 일했어요. (스님아님) <br />
+              가끔 그림을 그려요.
             </span>
           </div>
         </GroupBox>

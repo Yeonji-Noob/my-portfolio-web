@@ -6,6 +6,52 @@ import { useHamsterStore } from "../component/hamster/hamster-icon";
 
 
 
+
+
+//export를 붙이면 {}로 내보내기가 가능해짐 
+// export const VideoBg2 = styled.video`
+
+// display: none;
+// position: absolute;
+// width: 100%;
+// height: 100%;
+// object-fit: cover;
+// z-index: -2;
+
+// `;
+
+
+const Bg = styled.div`
+background-color: #fff09a;
+`;
+
+const BackGround: React.FC = () => {
+
+
+  const isHamster = useHamsterStore((state: { isHamster: boolean }) => state.isHamster);
+
+
+  return (
+
+    <BgContainer>
+      <VideoBg className="pc" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%"
+        style={{ display: isHamster ? 'none' : 'block' }}>
+      </VideoBg>
+      <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
+      </MobileVideoBg>
+      <VideoBg className="pc2" src={Videobgpc2} playsInline muted autoPlay loop width="100%" height="100%"
+        style={{ display: isHamster ? 'block' : 'none' }}
+      >
+      </VideoBg>
+      <Bg></Bg>
+    </BgContainer>
+
+  );
+}
+
+export default BackGround;
+
+
 //백그라운드 컨테이너
 const BgContainer = styled.div`
 position: absolute;
@@ -46,46 +92,3 @@ const MobileVideoBg = styled.video`
   }  
 
 `;
-
-
-//export를 붙이면 {}로 내보내기가 가능해짐 
-// export const VideoBg2 = styled.video`
-
-// display: none;
-// position: absolute;
-// width: 100%;
-// height: 100%;
-// object-fit: cover;
-// z-index: -2;
-
-// `;
-
-
-const Bg = styled.div`
-background-color: #fff09a;
-`;
-
-const BackGround: React.FC = () => {
-
-
-  const isHamster = useHamsterStore((state: { isHamster: boolean }) => state.isHamster);
-
-  return (
-
-    <BgContainer>
-      <VideoBg className="pc" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%"
-        style={{ display: isHamster ? 'none' : 'block' }}>
-      </VideoBg>
-      <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
-      </MobileVideoBg>
-      <VideoBg className="pc2" src={Videobgpc2} playsInline muted autoPlay loop width="100%" height="100%"
-        style={{ display: isHamster ? 'block' : 'none' }}
-      >
-      </VideoBg>
-      <Bg></Bg>
-    </BgContainer>
-
-  );
-}
-
-export default BackGround;

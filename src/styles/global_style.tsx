@@ -18,4 +18,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'DungGeunMo';
   }
 
+
+  input, textarea { 
+  -webkit-user-select : auto;
+  }
+
 `;

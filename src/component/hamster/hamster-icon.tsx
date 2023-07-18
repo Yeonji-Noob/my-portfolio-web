@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { create } from "zustand";
 import { ComponentsProps } from "../interface";
 import icon4 from "../../imgs/icons/hamster_icon.png";
@@ -28,7 +27,7 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
       left="10px"
       style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}
       onClick={ChangeHamster}
-      onTouchStartCapture={ChangeHamster}
+      onTouchEnd={ChangeHamster}
     >
       <Icon src={icon4} top="15px" left="13px" alt="hamster-icon">
       </Icon>
