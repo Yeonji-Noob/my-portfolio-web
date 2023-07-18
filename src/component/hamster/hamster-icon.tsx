@@ -28,7 +28,7 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
       left="10px"
       style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}
       onClick={ChangeHamster}
-      onTouchStart={ChangeHamster}
+      onTouchStartCapture={ChangeHamster}
     >
       <Icon src={icon4} top="15px" left="13px" alt="hamster-icon">
       </Icon>

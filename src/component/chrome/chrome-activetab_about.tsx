@@ -78,7 +78,7 @@ export const AboutTab = () => {
           margin: '0px',
 
           minWidth: '235px',
-          width: '75vw',
+          width: '77vw',
           maxWidth: '643px',
 
           height: '64vw',
