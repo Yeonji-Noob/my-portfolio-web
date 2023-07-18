@@ -67,7 +67,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
           }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
           <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
-            <CloseIcon></CloseIcon>
+            <CloseIcon onTouchStart={CloseButtonClick}></CloseIcon>
           </Button>
         </WindowHeader>
 
