@@ -1,8 +1,11 @@
 import { useState } from "react";
+
 import { useHamsterStore } from "../hamster/hamster-icon";
 import icon2 from "../../imgs/icons/notepad.png";
 import { NotepadWindow } from "./notepad-window";
-import { ComponentsProps } from "../common/win-icon";
+
+//interface
+import { ComponentsProps } from "../interface";
 
 
 export const Notepad = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps) => {
@@ -19,7 +22,7 @@ export const Notepad = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
     return (
         <>
             <NotepadWindow showDiv={showDiv} setShowDiv={setShowDiv} ></NotepadWindow>
-            <DivIconContainer onClick={IconClick} top="90px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/cursors/cur-11/cur1046.cur), auto` }}>
+            <DivIconContainer onClick={IconClick} onTouchStart={IconClick} top="90px" left="10px" style={{ cursor: `url(https://cur.cursors-4u.net/cursors/cur-11/cur1046.cur), auto` }}>
                 <Icon src={icon2} top="15px" left="10px" alt="notepad-icon">
                 </Icon>
                 <Icon1Label top="35px" left="2px" style={{ color: isHamster ? 'white' : '' }}>

@@ -1,94 +1,21 @@
+import * as React from 'react';
+import { useRef } from "react";
+
 import { Window, WindowHeader, WindowContent, Button, TextInput } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { useRef } from "react";
-import { ShowDivProps } from "../chrome/chrome_window";
-// import { Resizable } from 'react-resizable';
 
-const CloseIcon = styled.span`
+import { ShowDivProps } from "../interface";
 
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
-
-
-const MaximizeButton = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-    }
-    &:before {
-      height: 50%;
-      width: 9px;
-      left: 1px;
-      top: 1px;
-      border: 3px solid black
-    }
-`;
-
-const MinimizeButton = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-    }
-    &:before {
-      height: 50%;
-      width: 15px;
-      left: 1px;
-      top: 4px;
-      border-bottom: 3px solid black
-    }
-`;
 
 
 
 export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
+    //창 닫기!
     const CloseButtonClick = () => {
-
         setShowDiv(!showDiv)
-
-    }
+    };
 
     // draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
     // https://wazacs.tistory.com/36
@@ -126,7 +53,7 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
                         <Button disabled>
                             <MaximizeButton></MaximizeButton>
                         </Button>
-                        <Button onClick={CloseButtonClick}>
+                        <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
                             <CloseIcon></CloseIcon>
                         </Button>
                     </div>
@@ -138,7 +65,6 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
                     <TextInput multiline
                         rows={4}
                         fullWidth style={{ width: '100%', height: '400px' }}>
-
                     </TextInput>
                 </WindowContent>
             </Window>
@@ -146,4 +72,81 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
         </Draggable>
 
     );
-}
+};
+
+
+//styled-components
+
+const MaximizeButton = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+    &:before {
+        height: 50%;
+        width: 9px;
+        left: 1px;
+        top: 1px;
+        border: 3px solid black
+    }
+`;
+
+const MinimizeButton = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+    }
+    &:before {
+        height: 50%;
+        width: 15px;
+        left: 1px;
+        top: 4px;
+        border-bottom: 3px solid black
+    }
+`;
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+        height: 100%;
+        width: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &:after {
+        height: 3px;
+        width: 100%;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+`;

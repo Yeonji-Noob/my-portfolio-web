@@ -33,7 +33,7 @@ const Form = ({ result, halted }: { result: string, halted: boolean }) => {
       <input type="number" placeholder='세로' value={row} onChange={onChangeRow} style={{ display: 'none' }} />
       <input type="number" placeholder='가로' value={cell} onChange={onChangeCell} style={{ display: 'none' }} />
       <input type="number" placeholder='지뢰' value={mine} onChange={onChangeMine} style={{ display: 'none' }} />
-      <Button onClick={onClickBtn}>
+      <Button onClick={onClickBtn} onTouchStart={onClickBtn}>
         {halted === false || result === '' ? '😊' : result}
       </Button>
 

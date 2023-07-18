@@ -1,77 +1,16 @@
-import { Dispatch, SetStateAction } from "react";
+import * as React from "react";
 import { Window, WindowHeader, WindowContent, Button, Frame, Separator, Monitor } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
 
+//interface
+import { ShowDivProps } from "../interface";
+
+//images
 import MonitorImg from "../../imgs/bg/welcome-monitor_background.jpg"
 import TipIcon from "../../imgs/icons/tip.png"
 import { GitHub } from "../common";
-
-const CloseIcon = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
-
-const ButtonDivFlex = styled.div`
-
-display: flex;
-flex-direction: column;
-
-@media (max-width: 375px) {
-    display: none;
-}
-
-`;
-
-
-const WelcomeTitle = styled.span`
-display: block;
-font-size: 20px;
-
-
-`;
-
-
-const WelcomeText = styled.p`
-position: relative;
-left:80px;
-width:160px;
-height: 20px;
-
-`;
-
-
-interface ShowDivProps {
-    showDiv: boolean;
-    setShowDiv: Dispatch<SetStateAction<boolean>>
-}
-
 
 
 
@@ -96,21 +35,20 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
     //버튼을 클릭할 때 나타나는 주소
     const handleClick = (link: string) => {
         window.open(link, '_blank');
-    }
+    };
 
-
+    //창 닫기!
     const CloseButtonClick = () => {
         setShowDiv(!showDiv);
-    }
+    };
 
+    //팝업창 뜨기
     const aboutWindowPopUp = () => {
         const aboutWindow = document.getElementById('chrome-parentWindow');
         if (aboutWindow !== null) {
             aboutWindow.style.display = 'block';
         }
-    }
-
-
+    };
 
     // draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
     // https://wazacs.tistory.com/36
@@ -124,7 +62,7 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
             <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '10%', zIndex: '98', maxWidth: '100vw', height: '500px', left: '50%', translate: '-50%', display: showDiv ? 'none' : 'block' }} >
                 <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'blue' }}>
                     <span style={{ textShadow: '0px 1px 2px #000000' }}>Welcome</span>
-                    <Button onClick={CloseButtonClick} aria-label="close-button">
+                    <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick} aria-label="close-button">
                         <CloseIcon></CloseIcon>
                     </Button>
                 </WindowHeader>
@@ -159,11 +97,42 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
                         </Frame>
                         <ButtonDivFlex>
-                            <Button style={aboutButtonStyle} aria-label="about" onClick={aboutWindowPopUp}>about</Button>
-                            <Button style={{ ...buttonStyle }} onClick={() => handleClick('https://github.com/Yeonji-Noob')} aria-label="Github"><GitHub></GitHub></Button>
-                            <Button style={mailButtonStyle} onClick={() => handleClick('mailto:rhcp3885@gmail.com')} aria-label="mail">mail📧</Button>
+
+                            <Button
+                                style={aboutButtonStyle}
+                                aria-label="about"
+                                onClick={aboutWindowPopUp}
+                                onTouchStart={aboutWindowPopUp}>
+                                about
+                            </Button>
+
+                            <Button
+                                style={{ ...buttonStyle }}
+                                onClick={() => handleClick('https://github.com/Yeonji-Noob')}
+                                onTouchStart={() => handleClick('https://github.com/Yeonji-Noob')}
+                                aria-label="Github">
+                                <GitHub>
+                                </GitHub>
+                            </Button>
+
+                            <Button
+                                style={mailButtonStyle}
+                                onClick={() => handleClick('mailto:rhcp3885@gmail.com')}
+                                onTouchStart={() => handleClick('mailto:rhcp3885@gmail.com')}
+                                aria-label="mail">
+                                mail📧
+                            </Button>
+
+
                             <Separator style={separatorStyle} />
-                            <Button style={{ ...buttonStyle }} onClick={CloseButtonClick} aria-label="close-button">Close</Button>
+
+                            <Button
+                                style={{ ...buttonStyle }}
+                                onClick={CloseButtonClick}
+                                onTouchStart={CloseButtonClick}
+                                aria-label="close-button">
+                                Close
+                            </Button>
                         </ButtonDivFlex>
 
                     </div>
@@ -178,3 +147,66 @@ const Welcome: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
 
 export default Welcome;
+
+
+
+// styled-components //
+
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+        height: 100%;
+        width: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    &:after {
+        height: 3px;
+        width: 100%;
+        left: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+`;
+
+const ButtonDivFlex = styled.div`
+
+display: flex;
+flex-direction: column;
+
+@media (max-width: 375px) {
+    display: none;
+}
+
+`;
+
+
+const WelcomeTitle = styled.span`
+display: block;
+font-size: 20px;
+
+
+`;
+
+
+const WelcomeText = styled.p`
+position: relative;
+left:80px;
+width:160px;
+height: 20px;
+
+`;

@@ -126,6 +126,7 @@ const RealTd: FC<RealTdProps> = memo(({ onClickTd, onRightClickTd, data }) => {
     <TD
       style={getTdStyle(data)}
       onClick={onClickTd}
+      onTouchStart={onClickTd}
       onContextMenu={onRightClickTd}
     >{getTdText(data)}
     </TD>

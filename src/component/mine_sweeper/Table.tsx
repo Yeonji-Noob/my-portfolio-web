@@ -16,7 +16,7 @@ const Table = () => {
       </tbody>
     </TableStyle>
   );
-}
+};
 
 export default Table;
 
