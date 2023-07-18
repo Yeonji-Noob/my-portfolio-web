@@ -37,7 +37,7 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
             <Button disabled>
               <MaximizeButton></MaximizeButton>
             </Button>
-            <Button onClick={CloseButtonClick}>
+            <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
               <CloseIcon></CloseIcon>
             </Button>
           </div>
