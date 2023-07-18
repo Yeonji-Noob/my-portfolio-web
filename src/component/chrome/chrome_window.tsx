@@ -31,7 +31,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
     value: number,
     event: React.MouseEvent<HTMLButtonElement> | React.TouchEvent<HTMLButtonElement>
   ) => {
-    console.log({ value, event });
+    // console.log({ value, event });
     setState({ activeTab: value });
   };
 
@@ -82,11 +82,11 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
 
           <Tabs value={activeTab}
-            onChange={(event: React.MouseEvent<HTMLButtonElement>) => handleChange(activeTab, event)}
+            onChange={handleChange}
             onTouchStart={(event: React.TouchEvent<HTMLButtonElement>) => handleChange(activeTab, event)}>
-            <Tab value={0}>about</Tab>
-            <Tab value={1}>skill</Tab>
-            <Tab value={2}>project</Tab>
+            <Tab value={0} onTouchStart={(event: React.TouchEvent<HTMLButtonElement>) => handleChange(activeTab, event)}>about</Tab>
+            <Tab value={1} onTouchStart={(event: React.TouchEvent<HTMLButtonElement>) => handleChange(activeTab, event)}>skill</Tab>
+            <Tab value={2} onTouchStart={(event: React.TouchEvent<HTMLButtonElement>) => handleChange(activeTab, event)}>project</Tab>
           </Tabs>
           <TabBody
             style={{
