@@ -16,7 +16,7 @@ export const GuestWarningWindow = () => {
       aboutWindow.style.display = 'none';
     }
 
-  }
+  };
 
   const nodeRef = useRef(null);
 

@@ -23,10 +23,8 @@ import { GuestListBox } from "./index";
 export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
   const CloseButtonClick = () => {
-
-    setShowDiv(!showDiv)
-
-  }
+    setShowDiv(!showDiv);
+  };
 
   // draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
   // https://wazacs.tistory.com/36

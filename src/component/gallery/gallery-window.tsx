@@ -10,10 +10,8 @@ import { ShowDivProps } from "../interface";
 export const GalleryWindow = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
   const CloseButtonClick = () => {
-
-    setShowDiv(!showDiv)
-
-  }
+    setShowDiv(!showDiv);
+  };
 
   // draggable 사용 시 strictMode 콘솔창 에러때문에 넣었음 
   // https://wazacs.tistory.com/36

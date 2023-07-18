@@ -1,6 +1,6 @@
 // import { useState } from "react";
 import { create } from "zustand";
-import { ComponentsProps } from "../common/win-icon";
+import { ComponentsProps } from "../interface";
 import icon4 from "../../imgs/icons/hamster_icon.png";
 
 import { HamsterStore } from "../interface";

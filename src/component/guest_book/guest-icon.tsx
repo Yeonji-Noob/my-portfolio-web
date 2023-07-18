@@ -14,7 +14,7 @@ export const GuestBook = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProp
 
   const IconClick = () => {
     setShowDiv(true);
-  }
+  };
 
 
   return (

@@ -13,10 +13,8 @@ import { SkillTab, AboutTab, ProjectTab } from "./index";
 export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
   const CloseButtonClick = () => {
-
-    setShowDiv(!showDiv)
-
-  }
+    setShowDiv(!showDiv);
+  };
 
   const [state, setState] = useState({
     activeTab: 0
@@ -67,7 +65,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
           }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
           <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
-            <CloseIcon onTouchStart={CloseButtonClick}></CloseIcon>
+            <CloseIcon></CloseIcon>
           </Button>
         </WindowHeader>
 
