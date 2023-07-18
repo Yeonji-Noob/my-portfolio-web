@@ -1,44 +1,12 @@
-import { Dispatch, SetStateAction, useState, useRef } from "react";
+import * as React from 'react';
+import { useState, useRef } from "react";
 import { Window, WindowHeader, WindowContent, Button, Tabs, Tab, TabBody } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
+
+import { ShowDivProps } from "../interface";
+
 import { SkillTab, AboutTab, ProjectTab } from "./index";
-
-const CloseIcon = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
-
-export interface ShowDivProps {
-  showDiv: boolean;
-  //set붙은 녀석은 boolean만 넣으면 안됨,,, 이렇게 해줘야 함
-  setShowDiv: Dispatch<SetStateAction<boolean>>
-}
 
 
 
@@ -98,7 +66,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
             backgroundColor: 'blue'
           }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
-          <Button onClick={CloseButtonClick}>
+          <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
             <CloseIcon></CloseIcon>
           </Button>
         </WindowHeader>
@@ -148,3 +116,34 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
     </Draggable >
   );
 }
+
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+      height: 100%;
+      width: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      height: 3px;
+      width: 100%;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+`;

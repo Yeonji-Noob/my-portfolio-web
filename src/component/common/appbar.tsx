@@ -1,27 +1,14 @@
+import { useState } from "react";
 import { AppBar, Toolbar, Button, Frame, MenuList, MenuListItem, Separator, Handle } from "react95";
 import styled from "styled-components";
-import { useState } from "react";
+
 import Welcome from "../welcome/welcome_window";
 import { AppButtons, CurrentTime, GitHub, KakaoTalk, Toss, Mail, WelcomeIcon } from ".";
 
 import BarStartImg from "../../imgs/bar/bar-win_start.png";
 
 
-const FrameContainer = styled.div`
-position: absolute;
-width : 100%;
-height: 100%;
 
-`;
-
-const StartMenuContainer = styled.div`
-
-  & .kbwcaa:hover {
-    background: #ff558e;
-    cursor: pointer;
-  }
-
-`;
 
 
 
@@ -85,7 +72,8 @@ const Bar: React.FC = () => {
         <Toolbar>
           <div style={{ display: 'flex', position: 'relative', width: '100%', height: '50px' }}>
 
-            <Button onClick={() => setOpen(!isOpen)} active={isOpen}
+            <Button onClick={() => setOpen(!isOpen)} onTouchStart={() => setOpen(!isOpen)}
+              active={isOpen}
               style={{ position: 'fixed', zIndex: '100', fontWeight: 'bold', marginTop: '0px' }}>
               <img src={BarStartImg} alt="start-img" style={{ height: '20px', marginRight: '4px' }} />
               Start
@@ -154,3 +142,22 @@ const Bar: React.FC = () => {
 }
 
 export default Bar;
+
+
+//styled-components
+
+const FrameContainer = styled.div`
+position: absolute;
+width : 100%;
+height: 100%;
+
+`;
+
+const StartMenuContainer = styled.div`
+
+  & .kbwcaa:hover {
+    background: #ff558e;
+    cursor: pointer;
+  }
+
+`;

@@ -12,7 +12,7 @@ export const GuestListBox = () => {
 
   return (
     <>
-      <Button style={{ marginBottom: '10px', fontFamily: 'NeoDungGeunMo' }} onClick={guestWarningWindowPopUp}>
+      <Button style={{ marginBottom: '10px', fontFamily: 'NeoDungGeunMo' }} onClick={guestWarningWindowPopUp} onTouchStart={guestWarningWindowPopUp}>
         방명록 남기기
       </Button>
 

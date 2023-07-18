@@ -4,7 +4,6 @@ export { GuestBookWindow } from "./guest_window";
 export { GuestWarningWindow } from "./guest-warning_window";
 
 
-
 export { ReactComponent as JS } from "../../imgs/guest/js.svg";
 export { ReactComponent as TS } from "../../imgs/guest/ts.svg";
 export { ReactComponent as Stallman } from "../../imgs/guest/stallman.svg";

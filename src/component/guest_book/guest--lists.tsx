@@ -50,7 +50,6 @@ export const GuestLists = () => {
       {guest.map(text => {
 
 
-
         return (
           <div key={text.key}>
             <div style={{ display: 'flex', justifyContent: 'space-evenly', alignItems: 'center', }}>
@@ -63,6 +62,7 @@ export const GuestLists = () => {
             <hr />
           </div>
         );
+
       })}
 
     </>

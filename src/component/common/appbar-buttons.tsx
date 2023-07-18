@@ -3,44 +3,7 @@ import { Button } from "react95";
 import { GitHub, KakaoTalk, Toss, Mail } from ".";
 
 
-const ButtonDivContainer = styled.div`
-
-  display: flex;
-
-  & .appbar-mail-button {
-
-    display: flax; 
-    z-index: 101;
-    padding: 0; 
-    margin-left: 100px;
-
-    @media (max-width: 320px) {
-      display: none;
-    }
-  }
-
-`;
-
-
-const ButtonDiv = styled.div`
-
-    display: flex;
-    position: relative;
-
-  & .appbar-icon-buttons {
-
-    @media (max-width: 320px) {
-      display: none;
-    }
-
-  }
-
-`;
-
-
 export const AppButtons = () => {
-
-
 
 
 
@@ -99,3 +62,38 @@ export const AppButtons = () => {
     </ButtonDivContainer>
   );
 }
+
+
+const ButtonDivContainer = styled.div`
+
+  display: flex;
+
+  & .appbar-mail-button {
+
+    display: flax; 
+    z-index: 101;
+    padding: 0; 
+    margin-left: 100px;
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+  }
+
+`;
+
+
+const ButtonDiv = styled.div`
+
+    display: flex;
+    position: relative;
+
+  & .appbar-icon-buttons {
+
+    @media (max-width: 320px) {
+      display: none;
+    }
+
+  }
+
+`;

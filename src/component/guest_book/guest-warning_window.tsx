@@ -4,35 +4,6 @@ import Draggable from "react-draggable";
 import { useRef } from "react";
 import { Warning } from "./index"
 
-const CloseIcon = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
 
 
 export const GuestWarningWindow = () => {
@@ -80,7 +51,7 @@ export const GuestWarningWindow = () => {
         }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>Message</span>
 
-          <Button onClick={CloseButtonClick}>
+          <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
             <CloseIcon></CloseIcon>
           </Button>
 
@@ -90,10 +61,40 @@ export const GuestWarningWindow = () => {
         <WindowContent style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-around' }}>
           <Warning></Warning>
           <p>스팸성 광고 댓글때문에 <br /> 방명록 남기기를 막아놨습니다. <br /> 방명록을 남기고 싶으시다면</p>
-
         </WindowContent>
       </Window>
 
     </Draggable>
   );
 }
+
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+      height: 100%;
+      width: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      height: 3px;
+      width: 100%;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+`;

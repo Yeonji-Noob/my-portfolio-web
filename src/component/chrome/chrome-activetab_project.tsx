@@ -8,45 +8,7 @@ import project4 from "../../imgs/project_img/galaga.gif"
 
 import { GitHub30pixel, Mobile, MobileNotSupported } from "./index";
 
-const ProjectTitle = styled.p`
 
-width: 165px; 
-word-break: break-all; 
-margin: 0 10px; 
-font-weight: 600;
-
-`;
-
-const ProjectContents = styled.p`
-
-width: 165px; 
-word-break: break-all; 
-margin: 10px 10px; 
-font-size: 14px;
-font-family: 'NeoDungGeunMo';
-
-`;
-
-const ProjectFlexBox = styled.div`
-
-display: flex; 
-margin: 30px;
-justify-content: space-around;
-
-@media (max-width: 620px) {
-  position: relative;
-  flex-direction: column;
-  & div {
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 350px) {
-  margin: 30px 0;
-  justify-items: start;
-}
-
-`;
 
 export const ProjectTab = () => {
 
@@ -141,3 +103,44 @@ export const ProjectTab = () => {
     </ScrollView>
   );
 }
+
+
+const ProjectTitle = styled.p`
+
+width: 165px; 
+word-break: break-all; 
+margin: 0 10px; 
+font-weight: 600;
+
+`;
+
+const ProjectContents = styled.p`
+
+width: 165px; 
+word-break: break-all; 
+margin: 10px 10px; 
+font-size: 14px;
+font-family: 'NeoDungGeunMo';
+
+`;
+
+const ProjectFlexBox = styled.div`
+
+display: flex; 
+margin: 30px;
+justify-content: space-around;
+
+@media (max-width: 620px) {
+  position: relative;
+  flex-direction: column;
+  & div {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 350px) {
+  margin: 30px 0;
+  justify-items: start;
+}
+
+`;

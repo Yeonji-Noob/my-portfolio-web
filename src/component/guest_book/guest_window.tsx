@@ -1,39 +1,12 @@
+import * as React from "react";
 import { useRef } from "react";
 import { Window, WindowHeader, WindowContent, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { ShowDivProps } from "../chrome/chrome_window";
+
+import { ShowDivProps } from "../interface";
+
 import { GuestListBox } from "./index";
-
-const CloseIcon = styled.span`
-
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
 
 
 // 문제 해결 (4/8)
@@ -43,8 +16,7 @@ display: inline-block;
 // 부모 컴포넌트의 useState props를 자식(여기)에다가 전달했는데 onclick하면 한번만 block이 되고 토글이 안됐었음
 // 이유는 부모 컴포넌트에서 자식 컴포넌트로 전달한 useState props가 변경되어도 자식 컴포넌트가 재렌더링 되지 않아서였음
 
-// 그래서 useState의 상태값 두개 모두를 자식인 여기로 넘겨줬더니 해결됨 ㅎㅎ
-// props에 대한 이해 부족 실감..
+// 그래서 useState의 상태값 두개 모두를 자식인 여기로 넘겨줬더니 해결됨
 
 
 
@@ -79,7 +51,7 @@ export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }:
         }} >
         <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'pink' }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>guest_book.txt</span>
-          <Button onClick={CloseButtonClick}>
+          <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
             <CloseIcon></CloseIcon>
           </Button>
         </WindowHeader>
@@ -93,3 +65,35 @@ export const GuestBookWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }:
     </Draggable>
   );
 }
+
+
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+      height: 100%;
+      width: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      height: 3px;
+      width: 100%;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+`;

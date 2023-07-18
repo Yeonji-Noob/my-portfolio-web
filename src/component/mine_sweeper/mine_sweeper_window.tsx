@@ -2,7 +2,7 @@ import { Window, WindowHeader, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
 import { useRef } from "react";
-import { ShowDivProps } from "../chrome/chrome_window";
+import { ShowDivProps } from "../interface";
 // import { Resizable } from 'react-resizable';
 import MineSearch from "./MineSearch";
 

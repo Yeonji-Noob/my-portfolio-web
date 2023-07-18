@@ -2,37 +2,10 @@ import { useRef } from "react";
 import { Window, WindowHeader, WindowContent, Button } from "react95";
 import styled from "styled-components";
 import Draggable from "react-draggable";
-import { ShowDivProps } from "../chrome/chrome_window";
 
-const CloseIcon = styled.span`
+import { ShowDivProps } from "../interface";
 
-display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-left: -1px;
-    margin-top: -1px;
-    transform: rotateZ(45deg);
-    position: relative;
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      background: ${({ theme }) => theme.materialText};
-    }
-    &:before {
-      height: 100%;
-      width: 3px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    &:after {
-      height: 3px;
-      width: 100%;
-      left: 0px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-`;
+
 
 export const GalleryWindow = ({ showDiv, setShowDiv }: ShowDivProps) => {
 
@@ -71,7 +44,7 @@ export const GalleryWindow = ({ showDiv, setShowDiv }: ShowDivProps) => {
         <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'Deeppink' }}>
           <span style={{ textShadow: '0px 1px 2px #000000' }}>gallery</span>
 
-          <Button onClick={CloseButtonClick}>
+          <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
             <CloseIcon></CloseIcon>
           </Button>
 
@@ -90,3 +63,33 @@ export const GalleryWindow = ({ showDiv, setShowDiv }: ShowDivProps) => {
     </Draggable>
   );
 }
+
+const CloseIcon = styled.span`
+
+display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: -1px;
+    margin-top: -1px;
+    transform: rotateZ(45deg);
+    position: relative;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: ${({ theme }) => theme.materialText};
+    }
+    &:before {
+      height: 100%;
+      width: 3px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:after {
+      height: 3px;
+      width: 100%;
+      left: 0px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+`;

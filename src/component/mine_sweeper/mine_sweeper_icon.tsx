@@ -3,7 +3,7 @@ import { useHamsterStore } from "../hamster/hamster-icon";
 import icon3 from "../../imgs/icons/mine_sweeper.png";
 import { MineWindow } from "./mine_sweeper_window";
 
-import { ComponentsProps } from "../common/win-icon";
+import { ComponentsProps } from "../interface";
 
 
 export const MineSweeper = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps) => {

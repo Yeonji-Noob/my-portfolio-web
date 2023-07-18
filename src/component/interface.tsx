@@ -29,6 +29,8 @@ export interface ComponentsProps {
 
 }
 
+
+
 export interface HamsterStore {
   isHamster: boolean;
   setHamster: (value: boolean) => void;
