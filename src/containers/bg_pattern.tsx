@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const BgPattern = styled.div`
 
-z-index: 99999;
+z-index: 98;
 opacity: .7;
 position: fixed;
 left: 0;
