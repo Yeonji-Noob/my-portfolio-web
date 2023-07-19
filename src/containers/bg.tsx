@@ -1,4 +1,5 @@
-import Videobgpc from "../imgs/bg/background-web_ver.mp4";
+// import Videobgpc from "../imgs/bg/background-web_ver.mp4";
+import VideobgpcGif from "../imgs/bg/background-web_ver.gif";
 import Videobgpc2 from "../imgs/bg/background-web2_ver.mp4"
 import Videobgmb from "../imgs/bg/background-mobile_ver.mp4";
 import styled from "styled-components";
@@ -34,9 +35,11 @@ const BackGround: React.FC = () => {
   return (
 
     <BgContainer>
-      <VideoBg className="pc" src={Videobgpc} playsInline muted autoPlay loop width="100%" height="100%"
+      <GifBg className="pc" src={VideobgpcGif}
+        // playsInline muted autoPlay loop 
+        // width="100%" height="100%"
         style={{ display: isHamster ? 'none' : 'block' }}>
-      </VideoBg>
+      </GifBg>
       <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
       </MobileVideoBg>
       <VideoBg className="pc2" src={Videobgpc2} playsInline muted autoPlay loop width="100%" height="100%"
@@ -70,7 +73,20 @@ position: absolute;
 width: 100%;
 height: 100%;
 object-fit: cover;
-z-index: -2;
+z-index: -1;
+
+@media (max-width: 499px) {
+    display:none;
+  }  
+`;
+
+const GifBg = styled.img`
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1;
 
 @media (max-width: 499px) {
     display:none;
