@@ -21,13 +21,15 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
     return setHamster(!isHamster);
   };
 
+
   return (
     <DivIconContainer
       top="260px"
       left="10px"
       style={{ cursor: `url(https://cur.cursors-4u.net/nature/nat-1/nat21.png), auto` }}
       onClick={ChangeHamster}
-      onTouchEnd={ChangeHamster}
+      onTouchStart={ChangeHamster}
+      onChange={ChangeHamster}
     >
       <Icon src={icon4} top="15px" left="13px" alt="hamster-icon">
       </Icon>
