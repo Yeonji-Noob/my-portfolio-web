@@ -34,83 +34,84 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
   return (
 
-    // <Draggable nodeRef={nodeRef} >
-    <Window ref={nodeRef} id="chrome-parentWindow"
-      style={{
-        position: 'absolute',
-        top: '10%',
-        left: '50%',
-        translate: '-50%',
-        zIndex: '99',
-
-        maxWidth: '700px',
-        width: '87vw',
-        minWidth: '280px',
-
-        minHeight: '400px',
-        height: '90vw',
-        maxHeight: '650px',
-        display: showDiv ? 'block' : 'none',
-      }}
-    >
-      <WindowHeader
+    <Draggable nodeRef={nodeRef} cancel='#chrome-tabs'>
+      <Window ref={nodeRef} id="chrome-parentWindow"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          height: '37px',
-          backgroundColor: 'blue'
-        }}>
-        <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
-        <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
-          <CloseIcon></CloseIcon>
-        </Button>
-      </WindowHeader>
+          position: 'absolute',
+          top: '10%',
+          left: '50%',
+          translate: '-50%',
+          zIndex: '99',
 
+          maxWidth: '700px',
+          width: '87vw',
+          minWidth: '280px',
 
-      <WindowContent
-        style={{
-          padding: 'clamp(0.1rem ,3vw, 1rem)',
-          paddingLeft: '0.6rem',
-          paddingTop: '0.8rem',
-        }}>
-
-
-        <Tabs
-          value={activeTab}
-          onChange={handleChange}
-        >
-          <Tab value={0}>about</Tab>
-          <Tab value={1}>skill</Tab>
-          <Tab value={2}>project</Tab>
-        </Tabs>
-        <TabBody
+          minHeight: '400px',
+          height: '90vw',
+          maxHeight: '650px',
+          display: showDiv ? 'block' : 'none',
+        }}
+      >
+        <WindowHeader
           style={{
-            minWidth: '255px',
-            width: '82vw',
-            maxWidth: '670px',
-
-            minHeight: '280px',
-            height: '68vw',
-            maxHeight: '545px',
-
-            padding: '0.5rem'
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '37px',
+            backgroundColor: 'blue'
           }}>
-          {activeTab === 0 && (
-            <AboutTab></AboutTab>
-          )}
-          {activeTab === 1 && (
-            <SkillTab></SkillTab >
-          )}
-          {activeTab === 2 && (
-            <ProjectTab></ProjectTab>
-          )}
-        </TabBody>
-      </WindowContent>
-    </Window>
-  )
-  {/* </Draggable > */ }
-  // );
+          <span style={{ textShadow: '0px 1px 2px #000000' }}>about.exe</span>
+          <Button onClick={CloseButtonClick} onTouchStart={CloseButtonClick}>
+            <CloseIcon></CloseIcon>
+          </Button>
+        </WindowHeader>
+
+
+        <WindowContent
+          style={{
+            padding: 'clamp(0.1rem ,3vw, 1rem)',
+            paddingLeft: '0.6rem',
+            paddingTop: '0.8rem',
+          }}>
+
+
+          <Tabs
+            id='chrome-tabs'
+            value={activeTab}
+            onChange={handleChange}
+          >
+            <Tab value={0}>about</Tab>
+            <Tab value={1}>skill</Tab>
+            <Tab value={2}>project</Tab>
+          </Tabs>
+          <TabBody
+            style={{
+              minWidth: '255px',
+              width: '82vw',
+              maxWidth: '670px',
+
+              minHeight: '280px',
+              height: '68vw',
+              maxHeight: '545px',
+
+              padding: '0.5rem'
+            }}>
+            {activeTab === 0 && (
+              <AboutTab></AboutTab>
+            )}
+            {activeTab === 1 && (
+              <SkillTab></SkillTab >
+            )}
+            {activeTab === 2 && (
+              <ProjectTab></ProjectTab>
+            )}
+          </TabBody>
+        </WindowContent>
+      </Window>
+      )
+    </Draggable >
+  );
 }
 
 
