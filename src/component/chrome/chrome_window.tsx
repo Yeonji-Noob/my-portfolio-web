@@ -34,7 +34,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
   return (
 
-    <Draggable nodeRef={nodeRef} cancel='#chrome-tabs'>
+    <Draggable nodeRef={nodeRef} cancel='.chrome-tab'>
       <Window ref={nodeRef} id="chrome-parentWindow"
         style={{
           position: 'absolute',
@@ -77,7 +77,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
 
           <Tabs
-            id='chrome-tabs'
+            className='chrome-tab'
             value={activeTab}
             onChange={handleChange}
           >
@@ -109,7 +109,6 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
           </TabBody>
         </WindowContent>
       </Window>
-      )
     </Draggable >
   );
 }
