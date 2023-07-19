@@ -11,7 +11,7 @@ const Table = () => {
   const { tableData } = useContext(TableContext);
   return (
     <TableStyle>
-      <tbody>
+      <tbody className='mine-table'>
         {Array(tableData.length).fill(null).map((tr, i) => <Tr key={i} rowIndex={i} />)}
       </tbody>
     </TableStyle>

@@ -24,7 +24,7 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
 
   return (
 
-    <Draggable nodeRef={nodeRef} >
+    <Draggable nodeRef={nodeRef} cancel=".mine-table">
 
       <Window ref={nodeRef} id="parentWindow" style={{ position: 'absolute', top: '100px', zIndex: '99', display: showDiv ? 'block' : 'none' }} >
         <WindowHeader style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '37px', backgroundColor: 'Royalblue' }}>
@@ -45,9 +45,6 @@ export const MineWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) => {
         </WindowHeader>
 
         {/* 여기가 지뢰찾기 들어갈 공간 */}
-        {/* <iframe src="https://mines.vercel.app/" width={316} height={440} title="mine_sweeper">
-
-        </iframe> */}
         <MineSweeper>
           <MineSearch />
         </MineSweeper>

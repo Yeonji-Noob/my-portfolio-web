@@ -4,7 +4,10 @@ import styled from "styled-components";
 import project1 from "../../imgs/project_img/soba.gif";
 import project2 from "../../imgs/project_img/todolist.gif";
 import project3 from "../../imgs/project_img/calc.gif";
-import project4 from "../../imgs/project_img/galaga.gif"
+import project4 from "../../imgs/project_img/galaga.gif";
+import project5 from "../../imgs/project_img/demi95.gif";
+import project6 from "../../imgs/project_img/mine.gif";
+
 
 import { GitHub30pixel, Mobile, MobileNotSupported } from "./index";
 
@@ -50,16 +53,16 @@ export const ProjectTab = () => {
       key: 4,
       title: <span>Demi95.computer</span>,
       content: <span> Window95풍의 <br /> 개인 포트폴리오 사이트 </span>,
-      img: project4,
-      href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
+      img: project5,
+      href: 'https://github.com/Yeonji-Noob/my-portfolio-web',
       ResponsiveWeb: <Mobile />
     },
     {
       key: 5,
       title: <span>Mine_sweeper</span>,
       content: <span> 9x9 사이즈의 <br /> 지뢰찾기 게임 입니다. </span>,
-      img: project4,
-      href: 'https://github.com/Yeonji-Noob/demi_game_galaga',
+      img: project6,
+      href: 'https://github.com/Yeonji-Noob/Mine_sweeper',
       ResponsiveWeb: <Mobile />
     },
 
