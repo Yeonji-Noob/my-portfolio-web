@@ -31,7 +31,7 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
 
     return (
 
-        <Draggable nodeRef={nodeRef} >
+        <Draggable nodeRef={nodeRef} cancel='.text-input'>
 
             <Window ref={nodeRef} id="parentWindow"
                 style={{
@@ -76,7 +76,9 @@ export const NotepadWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }: S
                         rows={4}
                         fullWidth
                         style={{ width: '100%', height: '400px' }}
-                        onChange={handleChange}>
+                        onChange={handleChange}
+                        className='text-input'
+                    >
                     </TextInput>
                 </WindowContent>
             </Window>

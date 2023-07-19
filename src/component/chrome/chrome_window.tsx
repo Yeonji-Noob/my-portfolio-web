@@ -33,7 +33,7 @@ export const ChromeWindow: React.FC<ShowDivProps> = ({ showDiv, setShowDiv }) =>
 
 
   return (
-
+    // Draggable 때문에 tab 선택이 안됐는데 cancel로 해결했다.
     <Draggable nodeRef={nodeRef} cancel='.chrome-tab'>
       <Window ref={nodeRef} id="chrome-parentWindow"
         style={{
