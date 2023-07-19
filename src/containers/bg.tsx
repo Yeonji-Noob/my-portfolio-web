@@ -1,10 +1,6 @@
-// import Videobgpc from "../imgs/bg/background-web_ver.mp4";
-// import Videobgpc2 from "../imgs/bg/background-web2_ver.mp4";
-
 //gif가 제일 용량이 작아서 채택
 import VideobgpcGif from "../imgs/bg/background-web_ver.gif";
 import Videobgpc2Gif from "../imgs/bg/background-web2_ver.gif"
-// import Videobgmb from "../imgs/bg/background-mobile_ver.mp4";
 import styled from "styled-components";
 import { useHamsterStore } from "../component/hamster/hamster-icon";
 
@@ -39,15 +35,10 @@ const BackGround: React.FC = () => {
 
     <BgContainer>
       <GifBg className="pc" src={VideobgpcGif}
-        // playsInline muted autoPlay loop 
-        // width="100%" height="100%"
         style={{ display: isHamster ? 'none' : 'block' }}>
       </GifBg>
-      {/* <MobileVideoBg className="mb" src={Videobgmb} playsInline muted autoPlay loop width="100%" height="100%">
-      </MobileVideoBg> */}
+
       <GifBg className="pc2" src={Videobgpc2Gif}
-        // playsInline muted autoPlay loop 
-        // width="100%" height="100%"
         style={{ display: isHamster ? 'block' : 'none' }}
       >
       </GifBg>
