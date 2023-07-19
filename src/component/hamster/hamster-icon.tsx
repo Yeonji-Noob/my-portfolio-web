@@ -1,4 +1,3 @@
-import { useState, useContext, useMemo } from "react";
 import { create } from "zustand";
 import { ComponentsProps } from "../interface";
 import icon4 from "../../imgs/icons/hamster_icon.png";
@@ -14,6 +13,7 @@ export const useHamsterStore = create<HamsterStore>(set => ({
 
 export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps) => {
 
+
   const isHamster = useHamsterStore(state => state.isHamster);
   const setHamster = useHamsterStore(state => state.setHamster);
 
@@ -24,6 +24,7 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
 
 
   return (
+
     <DivIconContainer
       top="260px"
       left="10px"
@@ -37,6 +38,8 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
         hamster
       </Icon1Label>
     </DivIconContainer>
+
   );
 
-} 
+}
+
