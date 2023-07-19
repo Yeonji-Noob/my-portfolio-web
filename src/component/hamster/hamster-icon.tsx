@@ -20,6 +20,7 @@ export const Hamster = ({ DivIconContainer, Icon, Icon1Label }: ComponentsProps)
 
 
   const ChangeHamster = (event: React.MouseEvent) => {
+    //이거 안해주면 터치 제대로 안먹는거같은 현상 생김...
     event.stopPropagation()
     return setHamster(!isHamster);
   };

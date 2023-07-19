@@ -1,7 +1,7 @@
 import { ThemeProvider } from "styled-components";
 
 import { GlobalStyle, GlobalFont } from "./styles"
-// import BackGround from "./containers/bg";
+import BackGround from "./containers/bg";
 import Bar from "./component/common/appbar";
 import WinIcon from "./component/common/win-icon";
 import BgPattern from "./containers/bg_pattern";
@@ -19,7 +19,7 @@ function App() {
       <GlobalFont />
       <ThemeProvider theme={Marine}>
         <WinIcon />
-        {/* <BackGround /> */}
+        <BackGround />
         <Bar />
       </ThemeProvider>
       <BgPattern />
