@@ -35,11 +35,11 @@ const BackGround: React.FC = () => {
 
     <BgContainer>
       <GifBg className="pc" src={VideobgpcGif}
-        style={{ display: isHamster ? 'none' : 'block' }}>
+        style={{ display: isHamster ? 'none' : 'block' }} alt="background_Hamster_img1">
       </GifBg>
 
       <GifBg className="pc2" src={Videobgpc2Gif}
-        style={{ display: isHamster ? 'block' : 'none' }}
+        style={{ display: isHamster ? 'block' : 'none' }} alt="background_Hamster_img2"
       >
       </GifBg>
       <Bg></Bg>
