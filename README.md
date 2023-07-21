@@ -27,6 +27,20 @@ https://demi95-computer.vercel.app/
 
 ##
 
+### <2023-07-20>
+
+![image](https://github.com/Yeonji-Noob/my-portfolio-web/assets/121682565/3ef39d32-438f-4355-ad6a-36f9d6300d49)
+
+성능 개선 모색 중...
+배경으로 쓰인 gif 용량의 크기를 개선하기 위해 
+
+webp, mp4 등 다른 대안 찾는 중 (쉽지 않음...)
+
+video 태그로 삽입시 
+카카오톡 인앱 브라우저에서 재생 썸네일이 다르게 표시되어서 gif로 바꿨는데
+
+다른 대안을 찾아야겠음
+
 <br/>
 
 ---
