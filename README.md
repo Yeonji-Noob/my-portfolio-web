@@ -130,4 +130,6 @@ video 태그로 삽입시
 <p>
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=white"/>
 <img src="https://img.shields.io/badge/createreactapp-09D3AC?style=for-the-badge&logo=createreactapp&logoColor=white"/>
+<img src="https://img.shields.io/badge/Reactdraggable-35BDB2?style=for-the-badge&logo=React&logoColor=white"/>
+  
 </p>
